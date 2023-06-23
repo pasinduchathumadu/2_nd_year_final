@@ -1,0 +1,365 @@
+:root {
+  --poppins: 'Poppins', sans-serif;
+  --lato: 'Lato', sans-serif;
+
+  --light: #F9F9F9;
+  --blue: #3C91E6;
+  --light-blue: #CFE8FF;
+  --grey: #eee;
+  --dark-grey: #AAAAAA;
+  --dark: #342E37;
+  --red: #DB504A;
+  --yellow: #FFCE26;
+  --light-yellow: #FFF2C6;
+  --orange: #FD7238;
+  --light-orange: #FFE0D3;
+}
+
+
+
+
+
+
+
+ .box{
+   width: 50%;
+   border-radius: 5px;
+   padding:6px 6px;
+   font-size: 17px;
+   color:var(--dark);
+   text-align: right;
+   background-color: transparent;
+   box-sizing: border-box;
+   border: none;
+   
+
+}
+
+.box3{
+  width: 40%;
+  margin-left: 20px;
+  font-size: 17px;
+border: none;
+background-color:var(--light);
+  color: var(--dark);
+  margin-left: 60px;
+}
+
+
+
+
+
+
+
+
+
+
+	  
+ 
+a.edit{
+width:130px;
+  background-color:var(--blue);
+  color: var(--light);
+  margin-left: 600px;
+  padding: 8px 12px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 100;
+  display: inline-block;
+  box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
+   transition: transform .4s;}
+   
+  
+  a.edit:hover{
+  background-color:var(--blue);
+    -ms-transform: scale(1.1);
+  -webkit-transform: scale(1.1); 
+  transform: scale(1.1);
+  }
+  
+
+.column {
+  float: left;
+  height:50%;
+  padding: 10px;
+  height: 900px; 
+  background-color:#bbb;
+}
+
+.left {
+  width: 35%;
+
+}
+
+.right {
+  width: 65%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+  background-color:#bbb;
+}
+
+.profile{
+   height: 120px;
+   width: 120px;
+   border-radius: 100%;
+   object-fit: cover;
+   margin-bottom: 5px;
+ 
+}
+
+.userprofile{
+	text-align:center;
+}
+
+a.add{
+	  text-decoration: none;
+    color: #091d2a;
+}
+
+
+
+.column2 {
+ float: left;
+ width: 40%;
+ padding: 0 10px;
+ margin-left:100px;
+}
+
+
+.row2:after {
+ content: "";
+ display: table;
+ clear: both;
+}
+
+
+@media screen and (max-width: 600px) {
+ .column2 {
+   width: 90%;
+   display: block;
+   margin-bottom: 20px;
+ }
+}
+
+
+
+
+.delete{
+  width:130px;
+  background-color: var(--blue);
+  color: var(--light);
+  margin-bottom: 10px;
+  margin-left: 10px;
+  padding: 8px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 100;
+  border-radius: 5px;
+  box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
+   transition: transform .4s;
+  border-color: var(--blue);}
+ 
+ .delete:hover{
+ background-color: var(--blue);
+   -ms-transform: scale(1.1);
+ -webkit-transform: scale(1.1); 
+ transform: scale(1.1);
+ }
+ 
+ label {
+  display: inline-block;
+  width: 140px;
+  text-align: right;
+  font-weight: 100;
+}​
+
+a.vehicle{
+ text-decoration:none;
+ color:var(--blue);
+ font-size: 16px;
+}
+
+.v{
+  text-decoration:none;
+  color:black;
+  font-size: 15px;
+ }
+ 
+
+.prof{
+ border-radius: 80%;
+}
+
+.vehicle{
+
+  color: var(--blue);
+ }
+
+
+a.add{
+ color:#1d5071;
+ font-size:15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.up {
+  margin-left: 47%;
+  font-size: 30px;
+}
+
+
+.round {
+	border-radius: 100%;
+	padding: 7px;
+  width: 150px;
+  height: 150px;
+  margin-left: 48%;
+
+}
+
+
+
+.column3 {
+  float: left;
+  width: 50%;
+  
+  height: 800px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row3:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+
+
+
+
+
+
+
+
+
+button {
+  background-color:var(--blue);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Float cancel and delete buttons and add an equal width */
+.cancelbtn, .deletebtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add a color to the cancel button */
+.cancelbtn {
+  background-color: #ccc;
+  color: black;
+}
+
+/* Add a color to the delete button */
+.deletebtn {
+  background-color: #f44336;
+}
+
+/* Add padding and center-align text to the container */
+.container {
+  padding: 16px;
+  text-align: center;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: var(--grey);
+  padding-top: 50px;
+  margin-left: 10%;
+  
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* Style the horizontal ruler */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+ 
+/* The Modal Close Button (x) */
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and delete button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .deletebtn {
+     width: 100%;
+  }
+}

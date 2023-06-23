@@ -1,0 +1,14 @@
+.container {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.chartbox {
+    width: 200px;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: white;
+    height: 60px;
+}

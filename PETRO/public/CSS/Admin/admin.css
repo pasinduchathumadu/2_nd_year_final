@@ -1,0 +1,157 @@
+*{
+    margin:0;
+}
+.main1{
+    margin-top: 14px;
+    margin-left: 25%;
+    margin-right: 25%;
+
+    padding: 2%;
+    border-radius: 10px;
+    
+    text-align: center;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
+}
+
+.box{
+    width: 40%;
+    border-radius: 5px;
+    padding:12px 14px;
+    font-size: 18px;
+    color:black;
+    margin:10px 0;
+    background-color: white;
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: #3498db;
+ }
+
+ 
+.box1{
+    width:30%;
+    border-radius: 5px;
+    padding:12px 14px;
+    font-size: 18px;
+    color:black;
+    margin:10px 0;
+    background-color: white;
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: #3498db;
+ }
+
+.navbartop {
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    background-color:rgb(46, 44, 44);
+    height:40px;
+  }
+.mail{
+    color: white;
+    font-size: 20px;
+}  
+
+a.petro{
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    text-align: center;
+}
+
+.box{
+width: 50%;
+border-radius: 5px;
+padding:12px 14px;
+font-size: 18px;
+color:black;
+margin:10px 0;
+background-color: white;
+}
+button{
+    border-radius: 10px;
+    color: rgb(1,39,39);
+    border: none;
+    outline:none ;
+    width: 25%;
+    padding: 2%;
+    text-decoration: none;
+    background-color:#3498db;
+    text-align: center;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 2px 2px;
+    transition:transform .5s;
+    cursor: pointer;
+}
+button:hover {
+    
+    -ms-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+.row {
+    display: block;
+    margin: 5%;
+    margin-bottom: 0%;
+    justify-content: space-around;
+}
+  /* Create two equal columns that sits next to each other */
+.form-inline {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+.form-inline label {
+    margin: 5px 10px 5px 0;
+}
+.form-inline input {
+    vertical-align: middle;
+    margin: 5px 10px 5px 0;
+    padding: 10px;
+}
+.center{
+    text-align: center;
+}
+.same{
+    text-decoration: none;
+}
+.main2{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.header{
+    font-size: 26px;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+.textarea1{
+    display: inline;
+    width: 26%;
+    padding: 10px;
+    border: solid thin #aaa;
+    border-radius: 10px;
+    margin: 5px;
+    outline: none;
+    text-align: center;
+}
+.textarea{
+    width: 58%;
+    padding: 10px;
+    border: solid thin #aaa;
+    border-radius: 10px;
+    margin: 5px;
+    outline: none;
+    text-align: center;
+}
+.error{
+    color: crimson;
+    text-align: center;
+    font-size: 24px;
+}
+body{
+    height: 95vh;
+}

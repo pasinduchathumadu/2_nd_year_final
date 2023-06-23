@@ -1,0 +1,290 @@
+
+
+.form-container{
+    min-height: 100vh;
+    background-color: var(--light-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:20px;
+    
+    }
+    .form-container form{
+    padding:20px;
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    width: 600px;
+    height:500px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
+    }
+    
+    .profile{
+     float:left;
+         
+    }
+
+    .form-container form .box1{
+    width: 50%;
+    border-radius: 5px;
+    padding:12px 14px;
+    font-size: 18px;
+    color:black;
+    margin:10px 0;
+    background-color: white;
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: #3498db;
+    }
+    
+    .form-container form .box2{
+    width: 50%;
+    height:150px;;
+    border-radius: 5px;
+    padding:12px 14px;
+    font-size: 18px;
+    color:black;
+    margin:10px 0;
+    background-color: white;
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: #3498db;
+    }
+    
+    label {
+         display: inline-block;
+         width: 150px;
+         text-align: left;
+       }
+    .btn{
+  
+    background-color: #3498db;
+    width:100px;
+    height:40px;
+    font-size:15px;
+      display: inline-block;
+    transition: transform .5s;
+    color: #ffffff;
+    border: #3498db;
+    
+    }
+    
+    .btn:hover{
+    background-color:#3498db;
+     -ms-transform: scale(1.2);
+    -webkit-transform: scale(1.2); 
+    transform: scale(1.2);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+    .container {
+      
+      margin: auto;
+      padding: 10px;
+      width:800px;
+    
+    }
+    
+    .screen {
+      
+      background: #ffffff;
+      border-radius: 15px;
+      height: 300px;
+      box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
+    }
+    
+    .screen:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 20px;
+      right: 20px;
+      bottom: 0;
+      border-radius: 15px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, .4);
+      z-index: -1;
+    }
+    
+    .screen-header {
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      background:#091d2a;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+    }
+    
+    .screen-header-left {
+      margin-right: auto;
+    }
+    
+    .screen-header-button {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      margin-right: 3px;
+      border-radius: 8px;
+      background: white;
+    }
+
+    .screen-header-right {
+      display: flex;
+    }
+    
+    .screen-header-ellipsis {
+      width: 3px;
+      height: 3px;
+      margin-left: 2px;
+      border-radius: 8px;
+      background: #999;
+    }
+    
+    .screen-body {
+      display: flex;
+    }
+    
+    .screen-body-item {
+      flex: 1;
+      padding: 50px;
+    }
+    
+    .screen-body-item.left {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .app-title {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      color: #091d2a;
+      font-size: 26px;
+    }
+    
+    .app-title:after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 25px;
+      height: 4px;
+      background: #091d2a;
+    }
+    
+    .app-contact {
+      margin-top: auto;
+      font-size: 8px;
+      color: #888;
+    }
+    
+    .app-form-group {
+      margin-bottom: 15px;
+    }
+    
+    .app-form-group.message {
+      margin-top: 40px;
+    }
+    
+    .app-form-group.buttons {
+      margin-bottom: 0;
+      text-align: right;
+    }
+    
+    .app-form-control {
+      width: 100%;
+      padding: 10px 0;
+      background: none;
+      border: none;
+      border-bottom: 1px solid #091d2a;
+      color:black;
+      font-size: 14px;
+      text-transform: uppercase;
+      outline: none;
+      transition: border-color .2s;
+    }
+    
+    .app-form-control::placeholder {
+      color: #666;
+    }
+    
+    .app-form-control:focus {
+      border-bottom-color: #ddd;
+    }
+    
+    .app-form-button {
+      background: none;
+      border: none;
+      color: #091d2a;
+      font-size: 14px;
+      cursor: pointer;
+      outline: none;
+    }
+    
+    .app-form-button:hover {
+      color: #3498db;
+    }
+    
+
+    
+    .dribbble {
+      width: 20px;
+      height: 20px;
+      margin: 0 5px;
+    }
+    
+    @media screen and (max-width: 520px) {
+      .screen-body {
+        flex-direction: column;
+      }
+    
+      .screen-body-item.left {
+        margin-bottom: 30px;
+      }
+    
+      .app-title {
+        flex-direction: row;
+      }
+    
+      .app-title span {
+        margin-right: 12px;
+      }
+    
+      .app-title:after {
+        display: none;
+      }
+    }
+    
+    @media screen and (max-width: 600px) {
+      .screen-body {
+        padding: 40px;
+      }
+    
+      .screen-body-item {
+        padding: 0;
+      }
+    }
+    

@@ -1,0 +1,156 @@
+.form-container form{
+    padding:20px;
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    width: 500px;
+    height:400px;
+    border-radius: 5px;
+      background-color:#ffffff;
+      box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
+ }
+
+ :root {
+  --poppins: 'Poppins', sans-serif;
+  --lato: 'Lato', sans-serif;
+
+  --light: #F9F9F9;
+  --blue: #3C91E6;
+  --light-blue: #CFE8FF;
+  --grey: #eee;
+  --dark-grey: #AAAAAA;
+  --dark: #342E37;
+  --red: #DB504A;
+  --yellow: #FFCE26;
+  --light-yellow: #FFF2C6;
+  --orange: #FD7238;
+  --light-orange: #FFE0D3;
+}
+ 
+ .navbar a.rightpro {
+   float: right;
+ }
+ .profile{
+     float:left;
+         
+ }
+ 
+  .form-container form .box1{
+    width: 30%;
+    border-radius: 5px;
+    padding:12px 14px;
+    font-size: 18px;
+    color:black;
+    margin:10px 0;
+    background-color: white;
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: #091d2a;
+ }
+
+
+  .box{
+  width: 20%;
+  border-radius: 5px;
+  padding:12px 14px;
+  font-size: 18px;
+  color:black;
+  margin:10px 0;
+  background-color: white;
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: #091d2a;
+}
+ table {
+   font-family: arial, sans-serif;
+   border-collapse: collapse;
+   width: 100%;
+   background-color: #ffffff;
+   box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
+ }
+ 
+  th {
+  
+   text-align: center;
+   padding: 10px;
+   background-color:var(--blue);
+   box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
+   color: #fff;
+ }
+
+ td {
+  
+  text-align: center;
+  padding: 10px;
+  background-color:var(--light);
+  box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
+}
+
+   
+
+
+.dbtn2{
+  background-color:var(--blue);
+  width:100px;
+  height:30px;
+  font-size:15px;
+  transition: transform .4s;
+  display: inline-block;
+  border-color: var(--blue);
+  color: white;
+  
+}
+
+.dbtn2:hover{
+  background-color: var(--blue);
+      -ms-transform: scale(1.1);
+ -webkit-transform: scale(1.1); 
+ transform: scale(1.1);
+}
+
+
+
+
+
+
+
+
+
+
+
+.column10 {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 500px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row10:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.float-container {
+
+  padding: 20px;
+}
+
+.float-child {
+  width: 46%;
+  float: left;
+  padding: 20px;
+
+}  
+
+#myInput{
+  width:400px;
+  height: 40px;
+  border-radius: 5px;
+  padding:12px 14px;
+  background-color: var(--grey);
+  border-color: #091d2a;
+
+  
+}

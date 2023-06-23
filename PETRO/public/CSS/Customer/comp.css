@@ -1,0 +1,89 @@
+:root {
+  --poppins: "Poppins", sans-serif;
+  --lato: "Lato", sans-serif;
+
+  --light: #f9f9f9;
+  --blue: #3c91e6;
+  --light-blue: #cfe8ff;
+  --grey: #eee;
+  --dark-grey: #aaaaaa;
+  --dark: #342e37;
+  --red: #db504a;
+  --yellow: #ffce26;
+  --light-yellow: #fff2c6;
+  --orange: #fd7238;
+  --light-orange: #ffe0d3;
+}
+
+.complaint {
+  width: 50%;
+  padding: 10px 0;
+  background-color: #fff;
+  border-radius: 10px;
+  border: 2px solid var(--grey);
+  color: var(--dark);
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.2s;
+  text-align: center;
+}
+
+.complaint2 {
+  width: 50%;
+  height: 200px;
+  padding: 10px 0;
+  background-color: #fff;
+  border-radius: 10px;
+  border: 2px solid var(--grey);
+  color: black;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.2s;
+  text-align: center;
+}
+
+.comp {
+  width: 700px;
+  height: 300px;
+  text-align: center;
+}
+
+.complete {
+  text-align: center;
+  color: var(--blue);
+}
+
+.button {
+  background-color: var(--blue);
+  width: 130px;
+  margin-left: 300px;
+  padding: 8px 12px;
+  color: var(--light);
+  border-color: var(--blue);
+  text-align: center;
+  border-radius: 10px;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s;
+}
+
+.button:hover {
+  background-color: var(--blue);
+  -ms-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.head {
+  font-size: 30px;
+}
+
+.contact {
+  font-size: 25px;
+  text-align: center;
+}
+
+.feedback {
+  color: var(--blue);
+}
