@@ -1,14 +1,6 @@
-
-
-
-
-
-
-
-
 <?php
-if(empty($data['error'])){
-    $data['error']=null;
+if (empty($data['error'])) {
+    $data['error'] = null;
 }
 ?>
 <!DOCTYPE html>
@@ -19,7 +11,7 @@ if(empty($data['error'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Background Change Automatic - Sagar Developer</title>
-    <link rel="stylesheet" href="<?php echo ROOT?>/CSS/Common/forget.css" text="text/css">
+    <link rel="stylesheet" href="<?php echo ROOT ?>/CSS/Common/login.css" text="text/css">
 </head>
 
 <body>
@@ -31,52 +23,26 @@ if(empty($data['error'])){
             <div class="title">
                 Email Verification
             </div>
-           
-            
+
+
+
+            <form action="<?php echo ROOT ?>/Pumper/Forget_password/details" method="post">
+
                 <div class="field">
-                <form action="<?php echo ROOT ?>/Pumper/Forget_password/details" method="post">
-            <div class="form">
-                <label>Enter your email:</label><br><br><br>
-                <input type="email"class="textarea" name="email" placeholder="E-Mail Address" required><br><br><br>
-                <input type="submit" value="SEND" name="submit" class="button1"><br>
-            </div><br>
-            <label class="error"><?php echo $data['error'] ?></label>
-           
-        </form>
-                   
+                    <input type="text" name="email" placeholder="Email-Address" required>
+
                 </div>
+
                 <div class="field">
-                    
+                    <br><br><input type="submit" value="SEND" name="submit" class="">
                 </div>
-                <div class="content">
-                 
-					<div class="pass-link">
-				
-                    
-                	</div>
-                   
-                </div>
-                <div class="field">
-                   
-                </div>
-                <div class="signup-link">
-                 
-                </div>
-				
-				
+                <br><br>
+                <label class="error"><?php echo $data['error'] ?></label>
+
             </form>
         </div>
     </div>
 
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
-

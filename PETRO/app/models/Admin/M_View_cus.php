@@ -2,11 +2,13 @@
 
 class M_View_cus extends Model
 {
-    protected $table='customer_manager';
+    protected $table='registered_users';
+
+    protected $table1 = 'all_manager';
 
     public function records(){
         $result=$this->connection();
-        $sql="select *from $this->table where status = 1";
+        $sql="select *from $this->table where role = 'staff' AND status = 1";
         $query=$result->query($sql);
         if($query->num_rows>0){
             $data=[
@@ -20,10 +22,11 @@ class M_View_cus extends Model
         }
     }
     public function remove($data){
-        $ID=$data['id'];
+        $email=$data['email'];
         $result=$this->connection();
 
-        $sql="Delete from $this->table where customer_manager_id='".$ID."'";
+
+        $sql="UPDATE $this->table SET status = 0 where email='".$email."' AND role = 'staff'";
         $query=$result->query($sql);
 
     }

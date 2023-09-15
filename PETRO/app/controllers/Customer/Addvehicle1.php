@@ -37,6 +37,7 @@ class Addvehicle1 extends Controller
 
             ];
             
+        //update the vehicle no 1
 
           $insert= $this->addvehicle1->add($data);
         if($insert==1){

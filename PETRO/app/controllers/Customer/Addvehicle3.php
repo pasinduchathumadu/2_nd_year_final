@@ -19,6 +19,8 @@ class Addvehicle3 extends Controller
         }
     }
 
+
+     //update the vehicle no 3
     public function add(){
         if($_SERVER['REQUEST_METHOD']=='POST'){
             $_POST=filter_input_array(INPUT_POST,FILTER_UNSAFE_RAW);

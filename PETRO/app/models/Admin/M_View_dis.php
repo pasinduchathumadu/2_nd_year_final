@@ -2,11 +2,14 @@
 
 class M_View_dis extends Model
 {
-    protected $table='distribution_manager';
+    protected $table='registered_users';
+
+    protected $table1 = 'all_manager';
+
 
     public function records(){
         $result=$this->connection();
-        $sql="select *from $this->table where status = 1";
+        $sql="select *from $this->table where role = 'manager' AND status = 1";
         $query=$result->query($sql);
         if($query->num_rows>0){
             $data=[
@@ -20,10 +23,12 @@ class M_View_dis extends Model
         }
     }
     public function remove($data){
+        $email=$data['email'];
         $result=$this->connection();
-        $ID=$data['id'];
-        $sql="DELETE FROM $this->table WHERE distribution_manager_id='".$ID."'";
+
+       
+        $sql="UPDATE $this->table SET status = 0 where email='".$email."' AND role = 'manager'";
         $query=$result->query($sql);
-     
+
     }
 }

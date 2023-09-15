@@ -20,6 +20,7 @@ class M_Register extends Model
         $vno =$data ['vno'];
         $vtype =$data ['vtype'];
         $ftype =$data ['ftype'];
+        $points =$data ['points'];
         
    
         
@@ -59,12 +60,12 @@ if($NIC==NULL ){
 
 }
 
-if(strlen("$NIC")!=10){
+if(strlen($NIC)!=10){
    return 10;
 
 }
 
-if(strlen("$pass")<=7){
+if(strlen($pass)<=7){
    return 11;
 
 }

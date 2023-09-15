@@ -437,7 +437,7 @@ $query22=$result1->query($sql22);
       
 
 
-         $select2 =  "SELECT COUNT(Oid)AS count FROM $this->table5  WHERE id = '".$id."' AND VMno='".$vno."'";
+         $select2 =  "SELECT COUNT(Oid)AS count FROM $this->table5  WHERE id = '".$id."' AND VMno='".$vno."' AND (remark ='pending')";
          $query2 = $result1->query($select2);
         
 

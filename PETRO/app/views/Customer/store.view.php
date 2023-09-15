@@ -149,11 +149,7 @@ if(empty($data['message'])){
   
             </div>
 
-
-
-
-
-            <?php
+ <?php
       
       echo $data['message'];
 ?>
@@ -162,17 +158,17 @@ if(empty($data['message'])){
 
 
 <div class="container-fluid">
-<div class="container">
-<div class="search">
-<h1>All Products</h1>
-<input type="text" name="" id="find" placeholder="search here...." onkeyup="search()">
+     <div class="container">
+           <div class="search">
+                        <h1>All Products</h1>
+                        <input type="text" name="" id="find" placeholder="search here...." onkeyup="search()">
    
-                       
-                        <a href="default.asp"> <p class="cart2"> <?php echo $data['count1']?></p>
+                       <!-- cart icon -->
+                        <a href="<?php echo ROOT ?>/Customer/Cart"> <p class="cart2"> <?php echo $data['count1']?></p>
                         <img src="<?php echo ROOT ?>/image/checkout.png"  style="width:40px;height:32px;">CART</a>
-</div>
+           </div>
 
-<div class="product-list">
+           <div class="product-list">
 
 <?php
 
@@ -182,33 +178,36 @@ if(empty($data['message'])){
 
               $tomorrow = date("Y/m/d", time() + 86400);
 				?>
-    <div class="product">
-	<form action="<?php echo ROOT ?>/Customer/Store/add " class="box" method="POST">
-         <img  class="imgg" src="<?php echo ROOT ?>/image/<?php echo $row['image']; ?>" alt="" width="100px"; height="100px"; >
-         <h3 class="name"><?php echo $row['name']; ?></h3><br>
-         <div class="price">Rs.<?php echo $row['price']; ?></div>
-         <input type="number" min="1" value="1"name="product_quantity" class="input">
-		<input type="hidden" name="p_id" value="<?php echo $row['p_id']; ?>">
+
+                <!-- view the products -->
+
+                  <div class="product">
+	              <form action="<?php echo ROOT ?>/Customer/Store/add " class="box" method="POST">
+                       <img  class="imgg" src="<?php echo ROOT ?>/image/<?php echo $row['image']; ?>" alt="" width="100px"; height="100px"; >
+                       <h3 class="name"><?php echo $row['name']; ?></h3><br>
+                       <div class="price">Rs.<?php echo $row['price']; ?></div>
+                       <input type="hidden" min="1" value="1"name="product_quantity" class="input">
+		               <input type="hidden" name="p_id" value="<?php echo $row['p_id']; ?>">
         
-         <input type="hidden" name="product_image" value="<?php echo $row['image']; ?>">
-         <input type="hidden" name="product_name" value="<?php echo $row['name']; ?>">
-         <input type="hidden" name="product_price" value="<?php echo $row['price']; ?>">
-		<input type="hidden" name="cdate" value="<?php echo date("Y/m/d") ?>" class="box" readonly >
-		<input type="hidden" name="ndate" value="<?php echo "$tomorrow" ?>" class="box" readonly><br>
+                      <input type="hidden" name="product_image" value="<?php echo $row['image']; ?>">
+                      <input type="hidden" name="product_name" value="<?php echo $row['name']; ?>">
+                      <input type="hidden" name="product_price" value="<?php echo $row['price']; ?>">
+		              <input type="hidden" name="cdate" value="<?php echo date("Y/m/d") ?>" class="box" readonly >
+		              <input type="hidden" name="ndate" value="<?php echo "$tomorrow" ?>" class="box" readonly><br>
          
-         <input type="submit" value="Buy Now" name="add_to_cart" class="btn" >
+                      <input type="submit" value="Buy Now" name="add_to_cart" class="btn" >
 		
       </form>
 
-      </div>
+               </div>
 	  <?php
       };
    };
    ?>
    <br>
 
-</div>
-</div>
+        </div>
+     </div>
 </div>
 
 

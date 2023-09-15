@@ -1,9 +1,5 @@
 
 
-
-
-
-
 <?php
 if(empty($data['message'])){
     $data['message']=NULL;
@@ -168,25 +164,40 @@ if(empty($data['error'])){
                      
                     </div>
 
-                    <p class="complete">  <?php
-      
-      echo $data['error'];
-?></p>
+                    <p class="complete">   
+                        
+                        <?php echo $data['error'] ?></p>
+
+
                     <div class="comp">
-                    <form action="<?php echo ROOT ?>/Customer/Complaint/add " method="POST">
+
+            <form action="<?php echo ROOT ?>/Customer/Complaint/add " method="POST">
                <br>
+
               <input type="hidden" class="" placeholder="NAME" value="CUS<?php echo $data['id']; ?>" name="id" required>
-              <input class="complaint" placeholder="EMAIL"value=" <?php echo $data['email']; ?>" name="email"><br><br>
-          
-                                <input class="complaint2" placeholder="Message" name="complaint" required><br><br>
-</div><br>
+              <input class="complaint" placeholder="EMAIL"value=" <?php echo $data['email']; ?>" name="email"><br><br><br>
+
+           <p class=""> Issue Type</p>   <br>           
+             <input type="radio"  name="issue" value="Fuel" required>
+             <label for="feedback">Fuel</label>
+             <input type="radio"  name="issue" value="Store" required>
+             <label for="feedback">Store</label>
+
+<br><br><br>
+              <input class="complaint2" placeholder="Message" name="complaint" required><br><br>
+
+                   </div><br><br><br><br><br><br><br>
               <button type="submit" class="button">SEND</button>
-</form>
+
+            </form>
   
 
 
 
-                </div>
+            </div>
+
+            <!-- Contact details -->
+
                 <div class="todo">
                     <div class="head">
                         <h3>Contact Us</h3>
@@ -228,7 +239,7 @@ if(empty($data['error'])){
 
 
 
-
+<!-- Complaint Response -->
 
 
 
@@ -243,6 +254,7 @@ if(empty($data['error'])){
                             <tr>
                                
             <th scope="col">Complain ID</th>
+            <th scope="col">Issue Type</th>
 			  <th scope="col">Complain</th>
 			  <th scope="col">Date-Time</th>
 			   <th scope="col">Response</th>
@@ -266,6 +278,7 @@ if(empty($data['error'])){
  
            echo "<tr>
        <td>".$row['com_id']."</td>
+       <td>".$row['issue_type']."</td>
        <td>".$row['complain']."</td>
        
        <td>".$row['date_time']."</td>

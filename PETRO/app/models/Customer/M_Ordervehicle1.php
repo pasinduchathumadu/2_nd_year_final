@@ -271,6 +271,7 @@ class M_Ordervehicle1 extends Model
                    }
                
                
+                   //check fuel availability
                    if($count2<10){
 
                                               
@@ -473,23 +474,25 @@ class M_Ordervehicle1 extends Model
 //check 2 times per vehicle
 
 
-                 $select2 =  "SELECT COUNT(Oid)AS count FROM $this->table5  WHERE id = '".$id."' AND VMno='".$vno."'";
-                 $query2 = $result1->query($select2);
+                $select2 =  "SELECT  *FROM $this->table5  WHERE (id = '".$id."' AND VMno='".$vno."') AND (remark ='pending')";
+               
+                $query2 = $result1->query($select2);
                 
 
+                while($row=$query2->fetch_array()){
+                    $count1=$row['count'];
+                }
+            
+            
+                if($count1>=1){
 
 
 
 
 
 
-                    while($row=$query2->fetch_array()){
-                        $count1=$row['count'];
-                    }
-                
-                
-                    if($count1>=1){
 
+        
                                                
         $sql2 = "select * from $this->table2  where id= 1";
         $query2=$result1->query($sql2);
@@ -681,14 +684,14 @@ class M_Ordervehicle1 extends Model
                         return $data;
 
 
-
+                    }
 
 
 
 
                         
 
-                    }
+                    
 
 
 

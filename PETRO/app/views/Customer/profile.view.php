@@ -171,7 +171,7 @@
                     </div>
  <br>
                 
-                            
+                 <!-- view profile details            -->
                                
     <label for="fname"><b>First Name: </b></label>
    <input type="text" value="<?php echo  $data['fname'] ?>" class="box3" readonly><br><br><br>
@@ -260,7 +260,7 @@
 
 
 
-
+ <!-- remove the account -->
 
   <form action="<?php echo ROOT?>/Customer/Profile/add" method="post">
 <a href="<?php echo ROOT ?>/Customer/Profileedit" class="edit"><b>Edit </b></a>

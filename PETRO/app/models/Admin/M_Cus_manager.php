@@ -2,9 +2,9 @@
 
 class M_Cus_manager extends Model{
 
-    protected $table = 'customer_manager';
+    protected $table = 'all_manager';
 
-    protected $table1 = 'total_user';
+    protected $table1 = 'registered_users';
 
     public function register($data){
         $result=$this->connection();
@@ -13,10 +13,11 @@ class M_Cus_manager extends Model{
         $last = $data['last'];
         $nic = $data['nic'];
         $email = $data['email'];
+        $phone = $data['phone'];
       
         $password = $data['password'];
 
-        $sql="select *from $this->table where customer_manager_id ='".$id."'";
+        $sql="select *from $this->table where manager_id ='".$id."' AND type = 'staff'";
         $query = $result->query($sql);
 
         if($query->num_rows>0){
@@ -27,7 +28,7 @@ class M_Cus_manager extends Model{
             return $data;
         }
 
-        $sql="select *from $this->table where email ='".$email."'";
+        $sql="select *from $this->table1 where email ='".$email."' AND role = 'staff'";
         $query = $result->query($sql);
 
         if($query->num_rows>0){
@@ -41,10 +42,11 @@ class M_Cus_manager extends Model{
             $active=1;
             $_SESSION['password']=$password;
             $hash = password_hash($password,PASSWORD_DEFAULT);
-            $sql="insert into $this->table(customer_manager_id,First_name,Last_name,NIC,email,password,status)values('$id','$first','$last','$nic','$email','$hash','$active')";
+            $sql="insert into $this->table(manager_id,email,type)values('$id','$email','staff')";
             $query = $result->query($sql);
-            $sql = "insert into $this->table1 (email,password,role,status)values('$email','$hash','staff',1)";
+            $sql="insert into $this->table1(email,password,fname,lname,NIC,phone,role,status)values('$email','$hash','$first','$last','$nic','$phone','staff','$active')";
             $query = $result->query($sql);
+            
             $_SESSION['customer_manager_id']=$id;
             $data=[
                 'error'=>'',

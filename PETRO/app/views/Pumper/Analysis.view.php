@@ -1,5 +1,5 @@
 <?php
-  if(!empty($data['92'])){
+  if(!empty($data)){
     $v1=$data['92'];
     $v2=$data['95'];
     $v3=$data['super'];
@@ -11,6 +11,7 @@
    
   
   }
+//   set the these variable to null
   else{
     $v1=NULL;
     $v2=NULL;
@@ -34,7 +35,8 @@
     <!-- Boxicons -->
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <!-- My CSS -->
-    <link rel="stylesheet" href="<?php echo ROOT?>/CSS/Pumper/fuck.css" text="text/css">
+    <link rel="stylesheet" href="<?php echo ROOT?>/CSS/Pumper/analyze.css" text="text/css">
+    <link rel="stylesheet" href="<?php echo ROOT?>/CSS/Common/common.css" text="text/css">
     
    
 
@@ -45,7 +47,7 @@
 
 
     <!-- SIDEBAR -->
-    <section id="sidebar">
+    -<section id="sidebar">
         <a href="#" class="brand">
             <i class='bx bxs-gas-pump'></i>
             <span class="text">PETRO</span>
@@ -59,8 +61,8 @@
             </li>
             <li>
                 <a href="<?php echo ROOT ?>/Pumper/Working">
-                    <i class='bx bxs-shopping-bag-alt'></i>
-                    <span class="text">Working Report</span>
+                <i class='bx bxs-report'></i>
+                    <span class="text">Pumped History</span>
                 </a>
             </li>
             <li>
@@ -78,7 +80,7 @@
             </li>
             <li>
                 <a href="<?php echo ROOT ?>/Pumper/Working_salary">
-                    <i class='bx bxs-message-dots'></i>
+                <i class='bx bxs-report'></i>
                     <span class="text">Salary Report</span>
                 </a>
             </li>
@@ -91,10 +93,12 @@
 
             <li>
                 <a href="<?php echo ROOT ?>/Pumper/Complain">
-                    <i class='bx bxs-group'></i>
+                <i class='bx bxs-envelope'></i>
                     <span class="text">Complain Box</span>
                 </a>
             </li>
+
+
 
 
         </ul>
@@ -125,7 +129,7 @@
                     <button type="submit"><i class='bx bx-search'></i></button>
                 </div>
             </form>
-        
+        <!-- display login user -->
             <?php echo $_SESSION['first_name']?>
             <a href="#" class="profile">
                 <img src="<?php echo ROOT ?>/image/th.jpg">
@@ -148,6 +152,7 @@
     <canvas id="myChart1" style="width:110%;max-width:700px"></canvas>
     <canvas id="myChart2" style="width:110%;max-width:700px"></canvas>
     <script>
+        // convert all php variable to the js
         var x1 =" <?php echo "$v1" ; ?>";
         var x2 =" <?php echo "$v2" ; ?>";
         var x3 =" <?php echo "$v3" ; ?>";
@@ -160,7 +165,7 @@
 
         var xValues = ["OCTANE 92", "OCTANE 95", "SUPER DIESEL", "AUTO DIESEL"];
         var yValues = [ x1, x2,x3,x4,0];
-        var barColors = ["#808000", "#800000","#808000","#800000","#091d2a"];
+        var barColors = ["#212c5e", "#4259bd","#cce6ff","#66a3ff"];
 
         var xValues_2 = ["Machine 1", "Machine 2", "Machine 3", "Machine 4"];
         var yValues_2 = [ x5,x6,x7,x8,0];
@@ -208,6 +213,7 @@
     
 
     </div>
+    <!-- request the date form -->
     <div class="head">
             <h3>Request The Date</h3>
         </div>
@@ -228,8 +234,9 @@
     <div class="head">
         <h3>DISTRIBUTED FUEL</h3>
     </div>
+    <!-- divided into the fuel type wise -->
     <div class="todo-list">
-    <li>OCTANE 92  &nbsp;&nbsp; : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        <li>OCTANE 92  &nbsp;&nbsp; : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
         <?php echo $v1?> Liters
         </li>
         <li>OCTANE 95  &nbsp;&nbsp; : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
@@ -252,9 +259,10 @@
     <div class="head">
         <h3>Machine</h3>
     </div>
+    <!-- explonation of overall distribution for machine -->
     <div class="todo-list">
     <div class="OUTLINE">
-        PETROL
+        DIESEL
     </div><br>
     <li>Machine 1 &nbsp;&nbsp; : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <?php echo $v5?><?php echo " Liters"?>
@@ -263,13 +271,13 @@
         <?php echo $v6?> Liters
         </li>
         <div class="OUTLINE">
-        DIESEL
+        PETROL
     </div><br>
         <li>Machine 3  &nbsp;&nbsp; : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <?php echo $v3?> Liters
+        <?php echo $v7?> Liters
         </li>
         <li>Machine 4  &nbsp;&nbsp; : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <?php echo $v4?> Liters
+        <?php echo $v8?> Liters
         </li>
     </div>
     

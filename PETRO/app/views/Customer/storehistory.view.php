@@ -19,10 +19,6 @@ if (empty($data['error'])) {
 
 
 
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -168,6 +164,7 @@ if (empty($data['error'])) {
 
             <input type="text" id="myInput" onkeyup='tableSearch()' placeholder="Search"><br><br>
 
+        <!-- view product order table -->
 
             <div class="table">
                 <table class="table1" id="myTable">
@@ -177,7 +174,6 @@ if (empty($data['error'])) {
                             <th scope="col">Product Name</th>
                             <th scope="col">Quantity</th>
                             <th scope="col">Price</th>
-
                             <th scope="col">Ordered Date</th>
 
 
@@ -186,16 +182,7 @@ if (empty($data['error'])) {
                     </thead>
                     <tbody>
 
-
-
                         <?php
-
-
-
-
-
-
-
 
                         if ($flag == true) {
                             if (mysqli_num_rows($data['result']) > 0) {
@@ -215,7 +202,9 @@ if (empty($data['error'])) {
 
                                 }
                             }
-                        } else {
+                        } 
+                        
+                        else {
                             echo $data['error'];
                         }
 
@@ -226,20 +215,12 @@ if (empty($data['error'])) {
 
                     </tbody>
                 </table>
-                <br><br><br>
-            </div>
+            <br><br><br>
+         </div>
 
+  <input type="text" id="myInput" onkeyup='tableSearch()' placeholder="Search"><br><br>
 
-
-
-
-
-
-
-
-            <input type="text" id="myInput" onkeyup='tableSearch()' placeholder="Search"><br><br>
-
-
+ <!-- View final Order table -->
 
             <div class="table">
                 <table class="table1" id="myTable2">
@@ -259,17 +240,9 @@ if (empty($data['error'])) {
                     <tbody>
 
 
+             <?php
 
-                        <?php
-
-
-
-
-
-
-
-
-                        if ($flag2 == true) {
+               if ($flag2 == true) {
                             if (mysqli_num_rows($data['result2']) > 0) {
                                 while ($row = mysqli_fetch_assoc($data['result2'])) {
 
@@ -287,32 +260,19 @@ if (empty($data['error'])) {
 
                                 }
                             }
-                        } else {
+                        } 
+                        
+                        else {
                             echo $data['error'];
                         }
 
 
                         ?>
 
-
-
-
-
-
-
-
-
-
-
-
                     </tbody>
                 </table>
                 <br><br><br><br><br><br><br><br><br>
             </div>
-
-
-
-
 
 
         </main>
@@ -348,14 +308,6 @@ if (empty($data['error'])) {
         menuBar.addEventListener('click', function () {
             sidebar.classList.toggle('hide');
         })
-
-
-
-
-
-
-
-
 
 
     </script>

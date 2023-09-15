@@ -7,7 +7,7 @@
     <title>PETRO</title>
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <!-- My CSS -->
-    <link rel="stylesheet" href="<?php echo ROOT ?>/CSS/Staff-manager/view_customer_profile.css" />
+    <link rel="stylesheet" href="<?php echo ROOT ?>/CSS/Staff-manager/view_customer.css" />
     <link rel="stylesheet" href="<?php echo ROOT ?>/CSS/Staff-manager/style.css" text="text/css" />
     <!-- Font Awesome Cdn Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
@@ -63,12 +63,6 @@
                 <a href="<?php echo ROOT ?>/Staff-manager/Salary_Rate">
                     <i class='bx bx-line-chart'></i>
                     <span class="text">Salary Percentage </span>
-                </a>
-            </li>
-            <li>
-                <a href="<?php echo ROOT ?>/Staff-manager/Feedback">
-                    <i class='bx bxs-message-rounded-check'></i>
-                    <span class="text">User Feedback</span>
                 </a>
             </li>
             <li>

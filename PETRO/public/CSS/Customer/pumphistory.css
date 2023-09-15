@@ -109,6 +109,27 @@
 }
 
 
+.cbtn{
+  background-color:var(--blue);
+  width:100px;
+  height:30px;
+  font-size:15px;
+  transition: transform .4s;
+  display: inline-block;
+  border-color: var(--blue);
+  color: white;
+  border-radius: 5px;
+  
+}
+
+.cbtn:hover{
+  background-color: var(--blue);
+      -ms-transform: scale(1.1);
+ -webkit-transform: scale(1.1); 
+ transform: scale(1.1);
+}
+
+
 
 
 

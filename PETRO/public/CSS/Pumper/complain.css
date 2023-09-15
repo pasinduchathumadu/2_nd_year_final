@@ -95,8 +95,10 @@ form .btn {
     width: 15%;
     background-color: var(--blue);
     color: white;
+    transition: transform .4s;
     border-radius: 5px;
     position: relative;
+    border: 2px solid white;
     overflow: hidden;
     border-color: var(--blue);
     font-size: 18px;
@@ -112,8 +114,11 @@ form .btn .btn-layer {
     transition: all 0.4s ease;
 }
 
-form .btn:hover .btn-layer {
-    left: 0;
+form .btn:hover  {
+    background-color: var(--blue);
+    -ms-transform: scale(1.1);
+-webkit-transform: scale(1.1); 
+transform: scale(1.1);
 }
 
 form .btn input[type="submit"] {
@@ -226,3 +231,14 @@ input[type=text], select, textarea {
     background-color: #342E37;
 }
 
+#subject{
+    border-radius: 5px;
+    border: 2px solid var(--blue);
+}
+
+
+#subject1{
+    border-radius: 5px;
+    border: 2px solid var(--blue);
+    font-weight: 900;
+}

@@ -2,7 +2,7 @@
 
 class M_Forget_password extends Model
 {
-    protected $table = 'total_user';
+    protected $table = 'registered_users';
 
 
     public $send_mail;

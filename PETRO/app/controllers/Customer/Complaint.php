@@ -29,6 +29,8 @@ class Complaint extends Controller
             $data=[
 
                 'id' => $id,
+
+                'issue' => trim( $_POST['issue']),
          
                 'complaint' => trim( $_POST['complaint']),
               

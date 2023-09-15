@@ -13,14 +13,15 @@
             $id=$_SESSION['CUS_id'];
             $fname=$_SESSION['CUS_first_name'];
            $id1=$data['loading'];
-           if($id1==0){
+        if($id1==0){
 
-    $No = 0;
+             $No = 0;
 
-    $startDate = 0;
-    $finishDate = 0;
-}
-else{
+             $startDate = 0;
+             $finishDate = 0;
+                  }
+         else{
+
             $No = $data['No'];
             
             $startDate = NULL;
@@ -49,8 +50,10 @@ else{
 
             $Date = $startDate.' TO '.$finishDate;
 
+            //get fuel availability
 
-            $sql7 = "select *from $this->table4 where fuel_type='auto diesel'";
+
+         $sql7 = "select *from $this->table4 where fuel_type='auto diesel'";
         $query7 = $result->query($sql7);
         while($row = $query7->fetch_array()){
             $price_auto = $row['price'];
@@ -96,7 +99,8 @@ else{
             
           
         }
-
+  
+        //Analyze all the vehicles for relevant time period
 
         $sql12="SELECT *FROM $this->table2 WHERE (DATE(time)>='".$startDate."' AND DATE(time)<='".$finishDate."') AND user_id='".$id."'";
         $query12=$result->query($sql12);
@@ -176,7 +180,7 @@ else{
 
 
 
-
+ //Analyze Selected vehicle for relevant time period
 
 
 
@@ -187,7 +191,7 @@ else{
                 if($query->num_rows>0){
                   
                     while($row=$query->fetch_array()){
-                        $total+=$row['amount'];
+                        $total+=$row['pumped_liters'];
                     }
                 }
 
@@ -198,7 +202,7 @@ else{
                 if($query->num_rows>0){
                   
                     while($row=$query->fetch_array()){
-                        $totalamount+=$row['price'];
+                        $totalamount+=$row['pay'];
                     }
                 }
 
@@ -208,33 +212,37 @@ else{
                 $total2=0;
                 $total3=0;
                 $total4=0;
-                if($query->num_rows>0){
+
+
+            if($query->num_rows>0){
                     $sql="SELECT *FROM $this->table2 WHERE DATE(time)>='".$startDate."' AND DATE(time)<='".$finishDate."' AND vehicle_no='".$No."' AND Fuel_Type='octane 92'";
                     $query=$result->query($sql);
                    
                     if($query->num_rows>0){
                         while($row=$query->fetch_array()){
-                            $total1+=$row['amount'];
+                            $total1+=$row['pumped_liters'];
                         }
                     }
+
+
                     $sql="SELECT *FROM $this->table2 WHERE DATE(time)>='".$startDate."' AND DATE(time)<='".$finishDate."' AND vehicle_no='".$No."' AND Fuel_Type='octane 95'";
                     $query=$result->query($sql);
                    
                     if($query->num_rows>0){
                         while($row=$query->fetch_array()){
-                            $total2+=$row['amount'];
+                            $total2+=$row['pumped_liters'];
                         }
                     }
 
                 }
 
-                else{
+            else{
                     $sql="SELECT *FROM $this->table2 WHERE DATE(time)>='".$startDate."' AND DATE(time)<='".$finishDate."' AND vehicle_no='".$No."' AND Fuel_Type='auto diesel'";
                     $query=$result->query($sql);
                    
                     if($query->num_rows>0){
                         while($row=$query->fetch_array()){
-                            $total3+=$row['amount'];
+                            $total3+=$row['pumped_liters'];
                         }
                     }
                     $sql="SELECT *FROM $this->table2 WHERE DATE(time)>='".$startDate."' AND DATE(time)<='".$finishDate."' AND vehicle_no='".$No."' AND Fuel_Type='super diesel'";
@@ -242,7 +250,7 @@ else{
                    
                     if($query->num_rows>0){
                         while($row=$query->fetch_array()){
-                            $total4+=$row['amount'];
+                            $total4+=$row['pumped_liters'];
                         }
                     }
 
@@ -281,16 +289,16 @@ else{
 
 
                   
-                        'sNo' => $sNo,
+                    'sNo' => $sNo,
                        
             
-                        'vno1' => $vno1,
+                    'vno1' => $vno1,
                     
                       
-                        'vno2' => $vno2,
+                    'vno2' => $vno2,
                    
             
-                        'vno' => $vno,
+                    'vno' => $vno,
                     
                     
                 ];

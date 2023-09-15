@@ -5,68 +5,67 @@
  }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <link rel="stylesheet" href="<?php echo ROOT?>/CSS/Customer/login.css" text="text/css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <title>PETRO</title>
+    <link rel="stylesheet" href="<?php echo ROOT?>/CSS/Common/login.css" text="text/css">
   
 </head>
+
 <body>
-
-
-
-
-
-
-<div class="container">
-	
-	<div class="screen">
-		<div class="screen__content">
-      <img src="<?php echo ROOT ?>/image/Common/petro.jpg" alt="petro logo" class="logo">
-			<form action="<?php echo ROOT ?>/Home/Login/login" method="post" class="login">
-			<?php echo $data['err'] ?>
-       
-				<div class="login__field">
-					<i class="login__icon fas fa-user"></i>
-					<input type="text" name="email" class="login__input" placeholder="Email">
-				</div>
-				<div class="login__field">
-					<i class="login__icon fas fa-lock"></i>
-					<input type="password" name="password"class="login__input" placeholder="Password">
-				</div>
-				<button class="button login__submit" type="submit">
-					<span class="button__text">Log In Now</span>
-					<i class="button__icon fas fa-chevron-right"></i>
-				</button>	
-            <br>
-            
-            <a href="" class="rn">Register Now </a>
-			</form>
-			<div class="social-login">
-			
-				<div class="social-icons">
-					<a href="#" class="social-login__icon fab fa-instagram"></a>
-					<a href="#" class="social-login__icon fab fa-facebook"></a>
-					<a href="#" class="social-login__icon fab fa-twitter"></a>
-				</div>
-			</div>
-		</div>
-		<div class="screen__background">
-			<span class="screen__background__shape screen__background__shape4"></span>
-			<span class="screen__background__shape screen__background__shape3"></span>		
-			<span class="screen__background__shape screen__background__shape2"></span>
-			<span class="screen__background__shape screen__background__shape1"></span>
-		</div>		
-	</div>
-</div>
-
-
- <br><br>
+    <div class="Section_top">
+        <header>
+            <a href="#"><img src="<?php echo ROOT ?>/image/Common/log.png" alt="" class="image"></a>
+     
+        </header>
+        <div class="wrapper">
+            <div class="title">
+                Login Form
+            </div>
+            <form action="<?php echo ROOT ?>/Home/Login/login" method="post" class="login">
+            <label class="error"><?php echo $data['err'] ?></label>
+                <div class="field">
+                    <input type="text" name="email" required>
+                    <label>Email Address</label>
+                </div>
+                <div class="field">
+                    <input type="password" name="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="content">
+                    <div class="checkbox">
+                        <input type="checkbox" id="remember-me">
+                        <label for="remember-me">Remember me</label>
+                    </div>
+					<div class="pass-link">
+					<a href="<?php echo ROOT ?>/Pumper/Forget_password" class="forget">Forget Password? </a>
+                    
+                	</div>
+                   
+                </div>
+                <div class="field">
+                    <input type="submit" value="Login">
+                </div>
+                <div class="signup-link">
+                    Not a member? <a href="<?php echo ROOT ?>/Customer/Register">Signup now</a>
+                </div>
+				
+				
+            </form>
+        </div>
+<br><br> <br><br>  <i class='bx bx-home'></i>
+        <a href="<?php echo ROOT ?>/Home/Home" class="home">Back to Home </a>
+    </div>
 
 </body>
 </html>
+
+
 
 
 

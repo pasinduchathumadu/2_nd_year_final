@@ -39,22 +39,11 @@ class M_edit_profile extends Model{
     
     public function submit_edit($data){
         $result = $this->connection();
-
-        $password = $data['password'];
-        // Validate password strength
-        $uppercase = preg_match('@[A-Z]@', $password);      //preg_match() returns whether a match was found in a string.
-        $lowercase = preg_match('@[a-z]@', $password);
-        $number    = preg_match('@[0-9]@', $password);
-        $specialChars = preg_match('@[^\w]@', $password);
         
         //check both password are match
         if($data['password'] != $data['editRetype_password']){
-            return 0;
-
-        // Validate password strength   
-        }elseif((!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password) < 8 ) && !empty($data['password'])) {
-            return 2;    
-
+            return false;
+            
         }else{
             //update user record given data to the data base table
             if(!empty($data['password'])){
@@ -65,7 +54,7 @@ class M_edit_profile extends Model{
             }
             $query = $result->query($insert);
             //redirect to the staff manager's page
-            return 1;
+            return true;
             
         };
         

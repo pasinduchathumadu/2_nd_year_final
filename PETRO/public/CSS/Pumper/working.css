@@ -97,7 +97,7 @@
 #content main .table-data .todo {
     flex-grow: 1;
     flex-basis: 250px;
-    background-color: lightblue;
+    background-color: #fff;
 }
 
 #content main .table-data .todo .todo-list {
@@ -157,9 +157,17 @@ form .btn {
     border-radius: 5px;
     position: relative;
     overflow: hidden;
+    border: 2px solid white;
+    transition: transform .4s;
     background-color: var(--blue);
     color: white;
     border-color: var(--blue);
+}
+form .btn:hover{
+    background-color: var(--blue);
+    -ms-transform: scale(1.1);
+-webkit-transform: scale(1.1); 
+transform: scale(1.1);
 }
 .search {
     width: 20%;
@@ -186,12 +194,12 @@ form .btn {
  .TO{
   padding-left: 10%;
   font-size: 24px;
-  color: white;
+  color: black;
  }
  .FROM{
   padding-left: 10%;
   font-size: 24px;
-  color: white;
+  color: black;
  }
  .attendance-list {
     width: 100%;
@@ -278,7 +286,7 @@ table thead tr {
     transform: translate(-50%, -50%);
     border: 3px solid #f1f1f1;
     z-index: 9;
-    background-color: #342E37;
+    background-color:white;
     padding: 20px;
     width: 400px;
    
@@ -339,5 +347,26 @@ table thead tr {
 }
 #close-popup{
     float: right;
-    background-color: white;
+    background-color:white;
+}
+.error{
+    color: red;
+    font-size:x-large;
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+.left{
+    width:50%;
+    text-align: left;
+   
+}
+.right{
+    width: 50%;
+    text-align: left;
+}
+#subject1{
+    border-radius: 5px;
+    border: 2px solid var(--blue);
+    width: 100%;
+    font-weight: 900;
 }

@@ -22,7 +22,9 @@ class Change_password extends Controller
                 
 
             ];
+            // pass these data to insert to the database
             $result=$this->change->change($data);
+            // redirect to the same page with messsage
             $this->view('Pumper/change_password',$result);
         }
     }

@@ -160,38 +160,16 @@ if(empty($data['error'])){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
             <div class="table-data">
                 <div class="order">
                     <div class="head">
                     
                      
                     </div>
-                
-
-                            
-                        
             
-
    
 <form action="<?php echo ROOT?>/Customer/Addvehicle3/add" method="POST">
-    
-  
-	  
-	 
-	     
+         
       
      <p class="err">  <?php
       
@@ -230,7 +208,7 @@ if(empty($data['error'])){
        
 		   <input type="submit" value="Add Vehicle 3" name="Update vehicle" class="btn4"><br><br>
        
-		<a href="profile.php" class="back2">Back</a>
+		<a href="<?php echo ROOT ?>/Customer/Profile" class="back2">Back</a>
      
 	  
 
@@ -238,20 +216,6 @@ if(empty($data['error'])){
     
    </form>
 </div>
-   
-   
-   
-   
-   
-   
-  
-   
-
-
-
-
-
-
 
                 
                 <div class="todo">
@@ -321,27 +285,8 @@ echo ' <a href='.$url4.' target="_blank" class="add"> + Add Machine </a>';
 
 
 
-            </div></div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		
-
-
+            </div>
+        </div>
 
 
         </main>
@@ -421,15 +366,7 @@ window.addEventListener('resize', function () {
 
 
 
-const switchMode = document.getElementById('switch-mode');
 
-switchMode.addEventListener('change', function () {
-    if (this.checked) {
-        document.body.classList.add('dark');
-    } else {
-        document.body.classList.remove('dark');
-    }
-})
     </script>
 </body>
 

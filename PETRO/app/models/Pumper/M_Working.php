@@ -6,26 +6,10 @@ class M_Working extends Model
     public function details_working($data){
         $pumper_id = $_SESSION['id'];
         $result = $this->connection();
-        $count=0;
-        $total=0;
-
-        $sql="select count(distinct order_id)AS COUNT,count(order_id)AS total from $this->table where pumper_id = '".$pumper_id."'ORDER BY ID DESC LIMIT 8";
-        $query = $result->query($sql);
-
-        if($query->num_rows>0){
-
-            while($row=$query->fetch_array())
-            {
-                $count=$row['COUNT'];
-                $total=$row['total'];
-            
-            }
-        }
-     
-
+       
       
-
-        $sql="select *from $this->table where pumper_id = '".$pumper_id."'ORDER BY ID DESC LIMIT 8";
+//execute query
+        $sql="select *from $this->table where pumper_id = '".$pumper_id."' AND DATE(time)=CURRENT_DATE() ORDER BY ID DESC limit 12 ";
         $query = $result->query($sql);
 
        
@@ -34,17 +18,20 @@ class M_Working extends Model
     
             $data=[
                 'result'=>$query,
-                'COUNT'=>$count,
-                'total'=>$total,
+               
+                'date'=>'Today',
+                'ID'=>$pumper_id,
                 
                 'error'=>'',
             ];
             return $data;
     }
+    //no records
     else{
         $data=[
-            'COUNT'=>$count,
-            'total'=>$total,
+            
+            'date'=>'Today',
+            'ID'=>$pumper_id,
             
             'error'=>'No Records',
         ];
@@ -56,43 +43,37 @@ class M_Working extends Model
         $from = $data['from'];
         $to =$data['to'];
         $pumper_id = $_SESSION['id'];
+        //concatination both dates
+        $date = $from.'-'.$to;
         $result = $this->connection();
-        $count=0;
-        $total=0;
-
-        $sql="select count(distinct order_id)AS COUNT,count(order_id)AS total from $this->table where pumper_id = '".$pumper_id."'AND(time>='".$from."' AND time<'".$to."')";
-        $query = $result->query($sql);
-
-        if($query->num_rows>0){
-
-            while($row=$query->fetch_array())
-            {
-                $count=$row['COUNT'];
-                $total=$row['total'];
-            
-            }
-        }
-
-        $sql="select *from $this->table where pumper_id = '".$pumper_id."' AND(time>='".$from."' AND time<='".$to."')";
+      //execute the query
+        $sql="select *from $this->table where (pumper_id = '".$pumper_id."') AND(DATE(time)>='".$from."' AND DATE(time)<='".$to."')";
         $query = $result->query($sql);
         if($query->num_rows>0){
             $data=[
+                'ID'=>$pumper_id,
                 'result'=>$query,
-                'COUNT'=>$count,
-                'total'=>$total,
+                
+                'date'=>$date,
                 'error'=>'',
             ];
             return $data;
         }
+        //no records
         else{
             $data=[
-               
-                'COUNT'=>$count,
-                'total'=>$total,
+                'ID'=>$pumper_id,
+                
+                'date'=>$date,
                 'error'=>'No Records..!!',
             ];
             return $data;
         }
 
     }
+    
+
+
+
+    
 }

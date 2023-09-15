@@ -91,6 +91,19 @@ class M_Profileedit extends Model
                     
     if($query2->num_rows>0){
 
+
+
+        $sql2 = "select * from $this->table2 where email='".$email."'";
+        $query2=$result->query($sql2);
+
+        while($row = $query2->fetch_array()){
+      
+            $phone2 = $row['phone'];
+            
+        }
+
+        if($phone2!=$phone){
+
         
         $error="Mobile Number Already Exists";
 
@@ -150,10 +163,11 @@ class M_Profileedit extends Model
            ];
            return $data;
          }
+        }
 
 
 
-         if(strlen('$phone')!=10){
+        if(strlen($phone)!=10){
 
         
             $error="Incorrect required length";
@@ -220,8 +234,8 @@ class M_Profileedit extends Model
 
             
                 
-        $sql3= "UPDATE $this->table2 SET phone='$phone' WHERE email='".$email."'";
-        $query3 = $result->query($sql3);
+            $sql3= "UPDATE $this->table2 SET phone='$phone' WHERE email='".$email."'";
+            $query3 = $result->query($sql3);
 
   
 

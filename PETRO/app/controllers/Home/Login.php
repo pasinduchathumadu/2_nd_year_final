@@ -25,7 +25,7 @@ class Login extends Controller
             $result=$this->LoginModel->login($data);
 
             if($result==1){
-                date_default_timezone_set('Europe/London');
+                date_default_timezone_set('Asia/Kolkata');
                 $time = date('H:i:s');
                 $_SESSION['login_time']=$time;
                 $login =$_SESSION['login_time'];
@@ -34,7 +34,7 @@ class Login extends Controller
 
             }
             elseif($result==2){
-                date_default_timezone_set('Europe/London');
+                date_default_timezone_set('Asia/Kolkata');
                 $time = date('H:i:s');
                 $_SESSION['login_time']=$time;
                 $login =$_SESSION['login_time'];
@@ -43,7 +43,7 @@ class Login extends Controller
 
             }
             elseif($result==3){
-                date_default_timezone_set('Europe/London');
+                  date_default_timezone_set('Asia/Kolkata');
                 $time = date('H:i:s');
                 $_SESSION['login_time']=$time;
                 $login =$_SESSION['login_time'];
@@ -52,7 +52,7 @@ class Login extends Controller
 
             }
             elseif($result==4){
-                date_default_timezone_set('Europe/London');
+                  date_default_timezone_set('Asia/Kolkata');
                 $time = date('H:i:s');
                 $_SESSION['login_time']=$time;
                 $login =$_SESSION['login_time'];
@@ -60,9 +60,19 @@ class Login extends Controller
                 header('location:http://localhost/PETRO/public/Staff-manager/Home');
 
             }
+            elseif($result==6){
+                header('location:http://localhost/PETRO/public/Admin/Home');
+
+            }
+            elseif($result==8){
+                $data['err']='YOU ARE NOT ASSIGNED!';
+                $this->view('Home/login',$data);
+
+            }
             else{
                 $data['err']='Password or Username is Incorrect!';
                 $this->view('Home/login',$data);
+        
             }
         }
     }

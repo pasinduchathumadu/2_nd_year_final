@@ -28,8 +28,7 @@ class M_Complaint extends Model
         $arr=array(
             'id' => $id,
             'email'=>$email,
-            'fname'=>$fname,
-           
+            'fname'=>$fname,     
             'result'=>$query6,
           
           
@@ -44,13 +43,12 @@ class M_Complaint extends Model
         $result1=$this->connection();
         $id =$_SESSION ['CUS_id'];
         $fname = $_SESSION['CUS_first_name'];
-      
-
+        $issue =$data ['issue'];
         $complaint =$data ['complaint'];
       
   
 
-         $sql = "INSERT INTO $this->table2 (user_id,complain) VALUES('$id','$complaint')";
+         $sql = "INSERT INTO $this->table2 (user_id,issue_type,complain) VALUES('$id','$issue','$complaint')";
          $query3 = $result1->query($sql); 
 
          if($query3){
@@ -74,7 +72,6 @@ class M_Complaint extends Model
             'id' => $id,
             'email'=>$email,
             'fname'=>$fname,
-            
             'result'=>$query6,
              'error'=>$error,
             
@@ -102,7 +99,6 @@ class M_Complaint extends Model
                'id' => $id,
                'email'=>$email,
                'fname'=>$fname,
-               
                'result'=>$query6,
                 'error'=>$error,
                

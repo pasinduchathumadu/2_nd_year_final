@@ -216,6 +216,7 @@ class M_Ordervehicle2 extends Model
 
     
     public function add($data){
+
         $result1=$this->connection();
         $id =$_SESSION ['CUS_id'];
         $fname=$_SESSION['CUS_first_name'];
@@ -230,20 +231,6 @@ class M_Ordervehicle2 extends Model
      
         
 
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
         $select3 =  "SELECT eligible_amount AS count FROM $this->table4  WHERE fuel_type = '".$ftype."'";
         $query3 = $result1->query($select3);
        
@@ -254,6 +241,7 @@ class M_Ordervehicle2 extends Model
            }
        
        
+           //check fuel availability
            if($count2<10){
 
                                       
@@ -450,7 +438,7 @@ $query22=$result1->query($sql22);
 
 
 
-         $select2 =  "SELECT COUNT(Oid)AS count FROM $this->table5  WHERE id = '".$id."' AND VMno='".$vno."'";
+         $select2 =  "SELECT COUNT(Oid)AS count FROM $this->table5  WHERE id = '".$id."' AND VMno='".$vno."'AND (remark ='pending')";
          $query2 = $result1->query($select2);
         
 

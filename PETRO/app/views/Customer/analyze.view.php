@@ -1,9 +1,5 @@
 
 
-
-
-
-
 <?php
 if(empty($data['total'])){
     $data['total']=NULL;
@@ -368,31 +364,10 @@ else{
                     </ul>
                     
                     
-                    
-              
-                
-                
-                    
-
-
-
 
             </div></div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            <!-- chart -->
 
 
             <div class="table-data">
@@ -449,7 +424,7 @@ var chart2=new Chart("myChart", {
 </div>
    
    
-   
+             <!-- analyze all the vehicles -->
 
                 
                 <div class="todo">

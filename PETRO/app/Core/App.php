@@ -14,15 +14,22 @@ class App
     public function loadController()
     {
         $URL = $this->splitURL();
+        
         $filename = "../app/controllers/".ucfirst($URL[0])."/".ucfirst($URL[1]).".php";
-        if(file_exists($filename))
+        if(((ucfirst($URL[0])=="Home") && ucfirst($URL[1]=="Login"))||((ucfirst($URL[0])=="Home") && ucfirst($URL[1]=="Home"))||(ucfirst($URL[0]=="Pumper")&&(ucfirst($URL[1]=="Forget_password")))||(ucfirst($URL[0]=="Pumper")&&(ucfirst($URL[1]=="Verify")))||(ucfirst($URL[0]=="Pumper")&&(ucfirst($URL[1]=="Reset")))){
+            require $filename;
+            $this->controller = ucfirst($URL[1]);
+            unset($URL[1]);
+
+        }
+        else if((file_exists($filename))&&($_SESSION))
         {
             require $filename;
             $this->controller = ucfirst($URL[1]);
             unset($URL[1]);
         }
         else{
-                $filename="../app/controllers/".ucfirst($URL[0])."/_404.php";
+                $filename="../app/controllers/Pumper/_404.php";
                 require $filename;
                 $this->controller = "_404";
         }

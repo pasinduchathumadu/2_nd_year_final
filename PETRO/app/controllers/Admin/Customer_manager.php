@@ -17,6 +17,7 @@ class customer_manager extends Controller{
             $last = trim($_POST['Last_name']);
             $nic = trim($_POST['customer_manager_NIC']);
             $password = trim ($_POST['password']);
+            $phone = trim ($_POST['phone']);
          
           
             $email = trim($_POST['customer_manager_email']);
@@ -26,7 +27,7 @@ class customer_manager extends Controller{
                 'first'=>$first,
                 'last'=>$last,
                 'nic'=>$nic,
-               
+                'phone'=>$phone,
                 'password'=>$password,
                 'email'=>$email,
             ];

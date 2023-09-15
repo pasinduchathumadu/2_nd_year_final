@@ -8,7 +8,10 @@ class Logout extends Controller{
     public function index(){
         $result=$this->profile->logout();
         if($result){
-            header('location:http://localhost/PETRO/public/Home/Login');
+           header('location:http://localhost/PETRO/public/Home/Login');
+        }
+        else{
+            header('location:http://localhost/PETRO/public/Pumper/User/logout_error');
         }
        
     }

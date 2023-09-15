@@ -59,6 +59,8 @@ class M_Addvehicle3 extends Model
          
 
             'phone'=>$phone,
+
+            'fname'=>$fname,
           
         );
         return $arr;
@@ -130,6 +132,7 @@ class M_Addvehicle3 extends Model
                    'sNo' => $sNo,
                    'error'=>$error,
                    'phone'=>$phone,
+                   'fname'=>$fname,
                  
                   
                ];
@@ -187,6 +190,7 @@ class M_Addvehicle3 extends Model
                    'sNo' => $sNo,
                    'error'=>$error,
                    'phone'=>$phone,
+                   'fname'=>$fname,
                  
                    
        
@@ -197,7 +201,7 @@ class M_Addvehicle3 extends Model
                return $data;
              }
 
-
+     //else insert the data to the table
 
         else{
 

@@ -7,24 +7,16 @@ class working_hours extends Controller{
     }
     public function index(){
        
-        $data=[
-            'error'=>'',
-        ];
+        // obtain records from database
         $result = $this->hours->details();
-        if($result){
-            $this->view("Pumper/hours",$result);
-        }
-        else{
-            $data['error']="No Records";
-            $this->view("Pumper/hours",$data);
-
-        }
+        $this->view("Pumper/hours",$result);
+       
     }
     public function previous(){
         if($_SERVER['REQUEST_METHOD']=='POST'){
 
             $_POST=filter_input_array(INPUT_POST,FILTER_UNSAFE_RAW);
-
+            // sort the date
             $data=[
                 'from'=>trim($_POST['from']),
                 'to'=>trim($_POST['to']),

@@ -1,59 +1,8 @@
 
-.row {  
-    display: -ms-flexbox; 
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .side {
-   
-    flex: 12%;
-    background-color: #71b3e2;
-    padding: 20px;
-    width:30px; 
-    
-  }
-  
-  .main {   
-    
-    flex: 78%;
-    background-color: transparent;
-    padding: 20px;
-  }
-  
-  
-  
-  .fakeimg {
-    background-color: #aaa;
-    background-image:url('images/shh.jpg');
-    width: 100%;
-    padding: 20px;
-  }
-  
-  .column {
-    float: left;
-    width: 30%;
-    padding: 0 10px;
-  }
-  
-  
-  .row2:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  
-  
-  @media screen and (max-width: 600px) {
-    .column {
-      width: 100%;
-      display: block;
-      margin-bottom: 20px;
-    }
-  }
+
   
 .input{
-  width: 50%;
+  width: 40%;
   padding:8px 10px;
   font-size: 16px;
   color:black;
@@ -76,7 +25,7 @@ label {
 }
 
 .No{
-  width: 50%;
+  width: 40%;
   padding:8px 10px;
   font-size: 16px;
   color:black;
@@ -107,7 +56,7 @@ label {
  border:1px #ddd;
  margin: auto;
  border-radius: 5px;
- margin-left: 45%;
+ margin-left: 40%;
   
 }
 

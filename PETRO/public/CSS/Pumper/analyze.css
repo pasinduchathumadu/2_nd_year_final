@@ -164,13 +164,15 @@
 
 
 form .btn {
-    height: 50px;
+    height: 40px;
     width: 30%;
     margin-left: 10%;
     border-radius: 5px;
     position: relative;
     overflow: hidden;
     background-color: var(--blue);
+    border: 2px solid white;
+    transition: transform .4s;
     color: white;
 }
 
@@ -184,8 +186,12 @@ form .btn .btn-layer {
     transition: all 0.4s ease;
 }
 
-form .btn:hover .btn-layer {
-    left: 0;
+form .btn:hover {
+    
+    background-color: var(--blue);
+    -ms-transform: scale(1.1);
+-webkit-transform: scale(1.1); 
+transform: scale(1.1);
 }
 .search {
     width: 20%;
@@ -257,6 +263,7 @@ border-radius: 10px;
     
     border: 2px;
     border-radius: 5px;
+    color:#fff;
 
     background-color: var(--blue);
     

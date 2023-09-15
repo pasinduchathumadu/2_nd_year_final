@@ -3,6 +3,7 @@
 class _404 extends Controller
 {
     public function index(){
-        echo "Page Not Found!";
+        $this->view('Pumper/404');
+    
     }
 }

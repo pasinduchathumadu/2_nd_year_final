@@ -152,6 +152,7 @@
 }
 
 #content main .table-data .order {
+    flex-grow: 1;
     flex-basis: 500px;
     margin-top: 15px;
 }

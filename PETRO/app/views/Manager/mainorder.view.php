@@ -25,7 +25,7 @@ if (empty($data['error'])) {
 
 
 
-    <title>AdminHub</title>
+    <title>PETRO</title>
 </head>
 
 <body>
@@ -38,58 +38,79 @@ if (empty($data['error'])) {
             <span class="text">PETRO</span>
         </a>
         <ul class="side-menu top">
-            <li class="active">
-                <a href="#">
+            <li>
+                <a href="<?php echo ROOT ?>/Manager/Home">
                     <i class='bx bxs-dashboard'></i>
-                    <span class="text">Home</span>
+                    <span class="text">Dashboard</span>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="<?php echo ROOT ?>/Manager/Update">
                     <i class='bx bxs-shopping-bag-alt'></i>
-                    <span class="text">Store</span>
+                    <span class="text">Update Fuel Details</span>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="<?php echo ROOT ?>/Manager/View_history">
                     <i class='bx bxs-doughnut-chart'></i>
-                    <span class="text">Pumping History</span>
+                    <span class="text">Analytics</span>
                 </a>
             </li>
             <li>
-                <a href="#">
-                    <i class='bx bxs-message-dots'></i>
-                    <span class="text">Complaints</span>
+                <a href="<?php echo ROOT ?>/Manager/Add_report">
+                    <i class='bx bxs-report'></i>
+                    <span class="text">Add Daily Report</span>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="<?php echo ROOT ?>/Manager/Report_history">
+                    <i class='bx bx-history'></i>
+                    <span class="text">Report History</span>
+                </a>
+            </li>
+            <li>
+                <a href="<?php echo ROOT ?>/Manager/View_order">
                     <i class='bx bxs-group'></i>
-                    <span class="text">Contact Us</span>
+                    <span class="text">View Orders</span>
+                </a>
+            </li>
+            <li>
+                <a href=Max>
+                    <i class='bx bxs-gas-pump'></i>
+                    <span class="text">Maximum Fuel</span>
+                </a>
+            </li>
+            <li class="">
+                <a href="Product">
+                    <i class='bx bxs-group'></i>
+                    <span class="text">Add Products</span>
                 </a>
             </li>
 
-            <li>
-                <a href="#">
+            <li class="active">
+                <a href="Product">
                     <i class='bx bxs-group'></i>
-                    <span class="text">About Us</span>
+                    <span class="text">Complete Orders</span>
                 </a>
             </li>
+
+
         </ul>
         <ul class="side-menu">
-            <li>
-                <a href="#">
-                    <i class='bx bxs-cog'></i>
-                    <span class="text">Profile</span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="logout">
-                    <i class='bx bxs-log-out-circle'></i>
-                    <span class="text">Logout</span>
-                </a>
-            </li>
-        </ul>
+            <ul class="side-menu">
+                <li>
+                    <a href="Product">
+                        <i class='bx bx-left-arrow-circle bx-fade-left-hover'></i>
+                        <span class="text">Back</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="logout">
+                        <i class='bx bxs-log-out-circle bx-fade-left-hover'></i>
+                        <span class="text">Logout</span>
+                    </a>
+                </li>
+            </ul>
     </section>
     <!-- SIDEBAR -->
 
@@ -111,7 +132,7 @@ if (empty($data['error'])) {
             <label for="switch-mode" class="switch-mode"></label>
 
             <a href="#" class="profile">
-                <img src="img/people.png">
+                
             </a>
         </nav>
         <!-- NAVBAR -->
@@ -140,6 +161,7 @@ if (empty($data['error'])) {
                             <th>Phone</th>
                             <th>Total</th>
                             <th>Payment Method</th>
+                            <th></th>
 
 
                         </thead>
@@ -149,14 +171,15 @@ if (empty($data['error'])) {
                             if (mysqli_num_rows($data['result1']) > 0) {
                                 while ($row = mysqli_fetch_assoc($data['result1'])) {
                             ?>
-                                    <form action="<?php echo ROOT ?>/Admin/Mainorder/add" method="post">
+                                    <form action="<?php echo ROOT ?>/Manager/Mainorder/add" method="post">
                                         <tr>
 
 
                                             <td><input class="box6" type="text" value="<?php echo $row['user_id']; ?>" name="user_id"></td>
 
                                             <td><input type="text" value="<?php echo $row['pids']; ?>" name="pids" class="box6"></td>
-                                            <td><input type="text" value="<?php echo $row['address']; ?>" name="address" class="box6"></td>
+                                            <td><p><?php echo $row['address']; ?></p></td>
+                                            <input type="hidden" value="<?php echo $row['address']; ?>" name="address" class="box6">
                                             <td><input type="text" value="<?php echo $row['phone']; ?>" name="phone" class="box6"></td>
                                             <td><input type="text" value="Rs.<?php echo $row['total']; ?>" name="total" class="box6"></td>
                                             <td><input type="text" value="<?php echo $row['pmethod']; ?>" name="pmethod" class="box6"></td>
@@ -170,22 +193,13 @@ if (empty($data['error'])) {
 
 
                                                 <input type="hidden" value="<?php echo  $row['Oid'] ?>" name="delete" readonly>
-                                                <button type="submit" class="delete-btn">Complete</a>
+                                                <button type="submit" class="cbtn">Complete</a>
                                             </td>
 
                                     </form>
 
-                                    <td>
-
-                                        <form action="<?php echo ROOT ?>/Admin/Mainorder/remove" method="post">
-                                            <input class="box6" type="hidden" value="<?php echo $row['Oid']; ?>" name="oid">
-                                            <input class="hidden" type="hidden" value="<?php echo $row['user_id']; ?>" name="user_id">
-
-                                            <input type="hidden" value="<?php echo $row['pids']; ?>" name="pids" class="box6">
-
-                                            <button type="submit" class="delete-btn">Cancel</a>
-                                    </td>
-                                    </form>
+                            
+                                    
                                     </tr>
                             <?php
 

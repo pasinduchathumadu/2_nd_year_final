@@ -18,5 +18,14 @@ class Model extends Database
     require_once '../app/core/'.$model.'.php';
 
     return new $model();
-}
+  }
+
+  public function qr_gen($model){
+    require_once '../app/core/'.$model.'.php';
+
+    return new $model;
+
+  }
+
+
 }

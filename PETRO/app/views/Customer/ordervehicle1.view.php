@@ -1,13 +1,5 @@
 
 
-
-
-
-
-
-
-
-
 <?php
 if(empty($data['message'])){
     $data['message']=NULL;
@@ -155,6 +147,10 @@ if(empty($data['message'])){
   
             </div>
 
+
+
+            <!-- view fuel availability -->
+
             <ul class="box">
             <li>
             <i class='bx bxs-gas-pump'></i>
@@ -207,10 +203,7 @@ if(empty($data['message'])){
     
 
         <p class="err">        
-        <?php
-      
-    echo $data['message'];
-?>
+        <?php echo $data['message'];?>
 </p>
 
 <br>
@@ -220,21 +213,21 @@ if(empty($data['message'])){
 
    
    
-    <input type="hidden" name="id" value="<?php echo $data['id']; ?>" class="box1" readonly >
-    <input type="hidden" name="email" value="<?php echo $data['email']; ?>" class="box1" readonly > <br>
-     <input type="text" name="vno" value="<?php echo $data['vno']; ?>" class="box1" readonly><br><br>
+              <input type="hidden" name="id" value="<?php echo $data['id']; ?>" class="box1" readonly >
+              <input type="hidden" name="email" value="<?php echo $data['email']; ?>" class="box1" readonly > <br>
+              <input type="text" name="vno" value="<?php echo $data['vno']; ?>" class="box1" readonly><br><br>
  
 
-     <input type="text" name="vtype" value="<?php echo $data['vtype']; ?>" class="box1" readonly><br><br>
+              <input type="text" name="vtype" value="<?php echo $data['vtype']; ?>" class="box1" readonly><br><br>
 
 
     <?php 
-if($data['ftype']=="petrol"){?>
+     if($data['ftype']=="petrol"){?>
 
-    <select name="ftype" class="box1" required>
-        <option value="" disabled selected hidden>--Fuel Type--</option>
-        <option value="octane 92">Octane 92</option>
-        <option value="octane 95">Octane 95</option>
+       <select name="ftype" class="box1" required>
+         <option value="" disabled selected hidden>--Fuel Type--</option>
+         <option value="octane 92">Octane 92</option>
+         <option value="octane 95">Octane 95</option>
     
     </select>
     <?php } ?>
@@ -243,15 +236,18 @@ if($data['ftype']=="petrol"){?>
 
     
     
-                                               <?php 
-if($data['ftype']=="diesel"){?>
+    <?php 
+        if($data['ftype']=="diesel"){?>
 
-    <select name="ftype" class="box1" required>
-        <option value=""disabled selected hidden>--Fuel Type--</option>
-        <option value="super diesel"> Super Diesel</option>
-        <option value="auto diesel"> Auto Diesel</option>
+        <select name="ftype" class="box1" required>
+            <option value=""disabled selected hidden>--Fuel Type--</option>
+            <option value="super diesel"> Super Diesel</option>
+            <option value="auto diesel"> Auto Diesel</option>
     
     </select>
+
+    <!-- Select the vehicle type -->
+    
     <?php } ?>
     
 
@@ -278,8 +274,11 @@ if($data['ftype']=="diesel"){?>
     }
    ?>
 
-   <br><br>    <input type="number" name="amount" placeholder="Fuel amount" class="box1" min="1"  max="<?php echo "$max" ?>"required>
-   <input type="hidden" id="points" name="petropoints" value="<?php echo $data['points']; ?>">
+   <br><br>   
+   
+   
+             <input type="number" name="amount" placeholder="Fuel amount" class="box1" min="1"  max="<?php echo "$max" ?>"required>
+            <input type="hidden" id="points" name="petropoints" value="<?php echo $data['points']; ?>">
     
 <br><br><br>
 

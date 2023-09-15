@@ -104,6 +104,7 @@ class M_Cart extends Model
 
 
                 $id = $_SESSION['CUS_id'];
+                $fname=$_SESSION['CUS_first_name'];
            
     
                 $sql="DELETE FROM $this->table where DATE(odt)<CURRENT_DATE()";
@@ -149,6 +150,7 @@ class M_Cart extends Model
                             'result1'=>$Oid,
                             'points'=>$points,
                             'count1'=>$count1,
+                            'fname'=>$fname,
                             'id'=>$id,
                             'error'=>'',
                             'erro'=>'These fields are required to be filled!',
@@ -209,6 +211,7 @@ class M_Cart extends Model
 
           public function remove($data){
             $result=$this->connection();
+            $fname=$_SESSION['CUS_first_name'];
             $id=$data['O_ID'];
             $p_id=$data['p_id'];
             $quantity=$data['quantity'];

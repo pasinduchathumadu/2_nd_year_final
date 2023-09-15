@@ -1,10 +1,5 @@
 
 
-
-
-
-
-
 <?php
 if(empty($data['error'])){
     $data['error']=NULL;
@@ -243,19 +238,6 @@ if(empty($data['error'])){
 </div>
    
    
-   
-   
-   
-   
-  
-   
-
-
-
-
-
-
-
                 
                 <div class="todo">
                 <h1>Vehicles & Machines</h1><br>
@@ -325,26 +307,6 @@ echo ' <a href='.$url4.' target="_blank" class="add"> + Add Machine </a>';
 
 
             </div></div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		
-
-
 
 
         </main>

@@ -65,12 +65,6 @@
                 </a>
             </li>
             <li>
-                <a href="<?php echo ROOT ?>/Staff-manager/Feedback">
-                    <i class='bx bxs-message-rounded-check'></i>
-                    <span class="text">User Feedback</span>
-                </a>
-            </li>
-            <li>
                 <a href="">
                     <!-- <i class='bx bxs-group'></i>
                     <span class="text">Salary Percentage </span> -->
@@ -180,14 +174,6 @@
                         <div class="field">
                         <input type="text" name = "phoneNumber" required placeholder="Enter Pumper's Phone Number">
                         </div>
-                        <br>
-                        <div>
-                        <Select name= "shift" id="shift">
-                            <option vlaue="">--Select Shift time--</option>
-                            <option vlaue="morning">Morning </option>
-                            <option vlaue="evening">Evening </option>
-                        </Select>
-                        </div>
                         <div>
                         <div class="field">
                             <input type="text" name = "email" required placeholder="Enter Pumper's Email">
@@ -200,7 +186,7 @@
                         </div><br>
                         <div class="btn">
                         <div class="btn-layer"></div>
-                            <input type="submit" name="submit" value="Register Now" onclick="test_str()">
+                            <input type="submit" name="submit" value="Register Now" >
                         </div>
                     </form>
                 </div>
@@ -217,34 +203,11 @@
     <script src="<?php echo ROOT ?>/JS/Staff-manager/script.js"></script>
     <!-- JS for profile icon drop down -->
     <script>
-        let submenudata = document.getElementById("submenu");
+        let submenu = document.getElementById("submenu");
 
         function toggleMenu(){
-            submenudata.classList.toggle("open-menu");
+            submenu.classList.toggle("open-menu");
         }
-    </script>
-
-    <!-- Password Validation -->
-    <script>
-        //
-        function test_str(){
-            var res;
-            //get string by password id
-            var str = document.getElementById("password").value;
-            console.log(str);
-            //regular expression(/ /),  tested against all possible matches in a string globaly (/ /g)
-
-            //simple letters (/[a-z]/g) 
-            //capital letters (/[A-Z]/g) 
-            //numbers (/[0-9]/g)
-            //symbols (/[^a-zA-Z\d]/g)
-            if (str.match(/[a-z]/g) && str.match(/[A-Z]/g) && str.match(/[0-9]/g) && str.match(/[^a-zA-Z\d]/g) && str.length >= 8)
-                res = "TRUE";
-            else if(str.length > 0){
-                alert("Please use strong password with lowercase, uppercase, special character, digit and password should Minimum 8 characters");
-            }
-        }
-
     </script>
 </body>
 

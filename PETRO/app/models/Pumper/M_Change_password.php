@@ -4,21 +4,30 @@ class M_Change_password extends Model
 {
     protected $table = 'pumper';
 
-    protected $table1 = 'total_user';
+    protected $table1 = 'registered_users';
 
     public function load(){
         $result=$this->connection();
         $pump_id = $_SESSION['id'];
+
+        // get the pumper login email
         $sql="select *from $this->table where id = '".$pump_id."'";
         $query=$result->query($sql);
+
         while($row = $query->fetch_array()){
-            $pump_id=$row['id'];
             $email=$row['email'];
-            $first=$row['first_name'];
-            $last=$row['last_name'];
-            $nic = $row['nic'];
-            $number = $row['phone_no'];
         }
+        // map into the regisstered user table
+        $sql="select *from $this->table1 where email = '".$email."'";
+        $query=$result->query($sql);
+
+        while($row = $query->fetch_array()){
+            $nic = $row['NIC'];
+            $first = $row['fname'];
+            $last = $row['lname'];
+            $number = $row['phone'];
+        }
+        // get the profile details
         $data=[
             'id'=>$pump_id,
             'email'=>$email,
@@ -26,6 +35,8 @@ class M_Change_password extends Model
             'number'=>$number,
             'first'=>$first,
             'last'=>$last,
+            'error'=>'',
+            'success'=>'',
         ];
         return $data;
         
@@ -33,26 +44,29 @@ class M_Change_password extends Model
     public function change($data){
         $result=$this->connection();
         $pump_id = $_SESSION['id'];
+       
         $current = $data['current_password'];
+         // entered password
         $new = $data['new_password'];
         $confirm = $data['confirm_password'];
         
         $sql="select * from $this->table where id = '".$pump_id."'";
         $query = $result->query($sql);
         while($row = $query->fetch_array()){
-            $original_password=$row['password'];
             $email = $row['email'];
         }
-        $sql="select *from $this->table where id = '".$pump_id."'";
+        $sql="select *from $this->table1 where email = '".$email."'";
         $query=$result->query($sql);
         while($row = $query->fetch_array()){
-            $pump_id=$row['id'];
-            $email=$row['email'];
-            $first=$row['first_name'];
-            $last=$row['last_name'];
-            $nic = $row['nic'];
-            $number = $row['phone_no'];
+          
+       
+            $first=$row['fname'];
+            $last=$row['lname'];
+            $nic = $row['NIC'];
+            $number = $row['phone'];
+            $original_password=$row['password'];
         }
+        // password confirmation
             $verify=password_verify($current,$original_password);
             if(!$verify){
                 $error="Existing Password is not match!";
@@ -63,16 +77,18 @@ class M_Change_password extends Model
                     'number'=>$number,
                     'first'=>$first,
                     'last'=>$last,
-                    'err'=>$error,
+                    'error'=>$error,
+                    'success'=>'',
                 ];
                 return $data;
             
             }
             else{
+                // current password is match next
                 if($new==$confirm){
+                    // hash the password
                     $password = password_hash($new,PASSWORD_DEFAULT);
-                    $sql="update $this->table set password ='".$password."' where id = '".$pump_id."'";
-                    $query=$result->query($sql);
+                   
                     $sql="update $this->table1 set password ='".$password."' where email = '".$email."'";
                     $query=$result->query($sql);
                     $error="Successfully Changed the password";
@@ -84,12 +100,14 @@ class M_Change_password extends Model
                         'number'=>$number,
                         'first'=>$first,
                         'last'=>$last,
-                        'err'=>$error,
+                        'success'=>$error,
+                        'error'=>'',
                     ];
                     return $data;
                   
                 }
                 else{
+                    // error occured
                     $error="Password didn't matched!";
                     $data=[
                         'id'=>$pump_id,
@@ -98,7 +116,8 @@ class M_Change_password extends Model
                         'number'=>$number,
                         'first'=>$first,
                         'last'=>$last,
-                        'err'=>$error,
+                        'error'=>$error,
+                        'success'=>'',
                     ];
                     return $data;
                    

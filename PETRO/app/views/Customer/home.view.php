@@ -142,22 +142,9 @@ if(empty($data['message'])){
     
           <a href="<?php echo ROOT ?>/Customer/Profile" class="profile">
        
-          <img src="<?php echo ROOT ?>/image/bp.jpg"  onclick="togglemenu()"style="width:35px;height:35px;">
+          <img src="<?php echo ROOT ?>/image/bp.jpg" >
         
-          <div class="sub-menu-wrap" id="submenu">
-                <div class= "sub-menu">
-                    <a href="<?php echo ROOT ?>/Staff-manager/Profile" class="sub-menu-link">
-                        <img src="<?php echo ROOT ?>/image/profile_dropdown/profile.png">
-                        <p>Profile</p>
-                        <span>></span>
-                    </a>
-                    <a href="<?php echo ROOT ?>/Staff-manager/Logout" class="sub-menu-link">
-                        <img src="<?php echo ROOT ?>/image/profile_dropdown/logout.png">
-                        <p>Logout</p>
-                        <span>></span>
-                    </a>
-                </div>
-            </div>
+      
 </a>
 
        

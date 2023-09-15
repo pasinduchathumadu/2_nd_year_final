@@ -1,7 +1,7 @@
 <?php
 
 class M_Send extends Model{
-    protected $table = 'customer_manager';
+    protected $table = 'registered_users';
 
     public $send_mail;
 
@@ -11,16 +11,17 @@ class M_Send extends Model{
 
     public function records($data){
         $id = $_SESSION['customer_manager_id'];
-        $result = $this->connection();
-        $sql = "select *from $this->table where customer_manager_id='".$id."'";
-        $query = $result->query($sql);
-        while($row = $query->fetch_assoc()){
-            $first=$row['First_name'];
-            $last = $row['Last_name'];
-        }
         $email = $data['email'];
         $password = $data['password'];
 
+        $result = $this->connection();
+        $sql = "select *from $this->table where email='".$email."' AND role = 'staff'";
+        $query = $result->query($sql);
+        while($row = $query->fetch_assoc()){
+            $first=$row['fname'];
+            $last = $row['lname'];
+        }
+       
         $recipient = $email;
         $subject = "ACCOUNT DETAILS";
         $message = "Hi $first &nbsp;$last &nbsp;<br>&nbsp;&nbsp;&nbsp;

@@ -10,9 +10,6 @@
     
 ?>
 
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -141,7 +138,7 @@
     
             <a href="<?php echo ROOT ?>/Customer/Profile" class="profile">
  
-    <img src="<?php echo ROOT ?>/image/pp.png"  style="width:35px;height:35px;"></a>
+    <img src="<?php echo ROOT ?>/image/bp.jpg"  style="width:35px;height:35px;"></a>
         
         </nav>
         <!-- NAVBAR -->
@@ -149,12 +146,7 @@
         <!-- MAIN -->
         <main>
 
-        <h1>Vehicle 2</h1>
-
-
-     
-
-<br><br>
+        <h1>Vehicle 2</h1><br><br>
 
 
 
@@ -166,10 +158,6 @@
                      
                     </div>
                     <br>
-
-                            
-                        
-
    
 <form action="<?php echo ROOT?>/Customer/Updatevehicle2/add" method="POST">
     
@@ -186,32 +174,24 @@
 			
 			<input type="text" name="ftype" value="<?php echo $data['ftype1']; ?>" class="box">
 
-            <input type="hidden" name="phone" value="<?php echo $data['phone']; ?>" class="box">
-                                   
-			
-              <br><br>           
+            <input type="hidden" name="phone" value="<?php echo $data['phone']; ?>" class="box">  <br><br>           
 			 
-			  
-			
-        
-            
-     
-         
-              <button onclick="document.getElementById('id01').style.display='block'" type="button" class="btn6">Remove</button>
+
+          <button onclick="document.getElementById('id01').style.display='block'" type="button" class="btn6">Remove</button>
        <br><br>
-		<a href="profile.php" class="back">Back</a>
+		<a href="<?php echo ROOT ?>/Customer/Profile" class="back">Back</a>
 
         <div id="id01" class="modal">
-  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+           <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
 
-    <div class="container">
+           <div class="container">
         <br><br><br><br>  <br><br><br><br>
-      <h1>Delete Vehicle</h1>
-      <p>Are you sure you want to remove this Vehicle?</p>
+          <h1>Delete Vehicle</h1>
+          <p>Are you sure you want to remove this Vehicle?</p>
     
       <div class="clearfix">
         <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-        <button type="submit" onclick="document.getElementById('id01').style.display='none'" class="deletebtn">Delete</button>
+        <button type="submit" onclick="document.getElementById('id01').style.display='none'" class="deletebtn">Remove</button>
       </div>
     </div>
 
@@ -239,19 +219,8 @@ window.onclick = function(event) {
 </script>
   
    
-           
-        
-                 
-  
+            </div>
 
-
-
-                </div>
-
-
-
-
-                
                 <div class="todo">
                 <h1>Vehicles & Machines</h1><br>
                     <div class="head">
@@ -319,24 +288,8 @@ echo ' <a href='.$url4.' target="_blank" class="add"> + Add Machine </a>';
 
 
 
-            </div></div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            </div>
+        </div>
 
         </main>
         <!-- MAIN -->

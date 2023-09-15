@@ -12,8 +12,8 @@
 }
 
 body {
-    background: rgb(226, 226, 226);
-}
+    background: linear-gradient(90deg, #ccd8e2, #718d99);
+  }
 
 nav {
     position: sticky;
@@ -93,6 +93,7 @@ a:hover i {
 
 .container {
     display: flex;
+    background: linear-gradient(90deg, #ccd8e2, #718d99);
 }
 
 .banner {
@@ -292,7 +293,7 @@ select {
     font-size: 0.75rem;
     cursor: pointer;
     line-height: 1.1;
-    background-color: #fff;
+    background: linear-gradient(90deg, #ccd8e2, #718d99);
     background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
     border-color: #3498db;
 }

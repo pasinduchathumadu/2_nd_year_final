@@ -1,0 +1,521 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 190vh;
+    font-family: sans-serif;
+    text-transform: capitalize;
+    background-color: #fff;
+}
+
+.Section_top {
+    width: 100%;
+    height: 100%;
+    background-image: url("../../image/Common/3.png");
+    
+
+    
+
+
+    background-position: 0px 101px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    animation: change 20s infinite ease-in-out;
+}
+
+.fuel{
+    color:#fff;
+    font-size: 60px;
+    letter-spacing: 15px;
+    font-weight: 700;
+}
+
+
+.details{
+    color:black;
+    font-size: 30px;
+    letter-spacing: 12px;
+    font-weight: 200;
+}
+
+.details2{
+    color:black;
+    font-size: 30px;
+    letter-spacing: 10px;
+    font-weight: 200;
+}
+
+.details3{
+    color:black;
+    font-size: 20px;
+    letter-spacing: 8px;
+    font-weight: 200;
+}
+
+
+.content h1 {
+    color: #fff;
+    font-size: 60px;
+    letter-spacing: 15px;
+    opacity: 0;
+    animation: slide 10s linear infinite;
+}
+
+.content h1 span {
+    color: #034e88;
+}
+
+.content a {
+    background: #85c1ee;
+    padding: 10px 24px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 20px;
+}
+
+.content a:hover {
+    background: #034e88;
+    color: #fff;
+}
+
+header {
+    position: absolute;
+    top: 3%;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    padding: 0px 2%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    border-bottom: #034e88 solid 10px;
+    height: 10%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+footer {
+    bottom: 0;
+    height: 8%;
+    background-color: #fff;
+    border-top: #034e88 solid 10px;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    position: relative;
+    float: left;
+}
+
+ul li a {
+    font-size: 20px;
+    padding: 20px;
+    color: #034e88;
+    display: block;
+    text-decoration: none;
+}
+
+ul li ul.dropdown li {
+    display: block;
+}
+
+ul li ul.dropdown li a {
+    color: #034e88;
+}
+
+ul li ul.dropdown li a:hover {
+    color: #034e88;
+}
+
+
+ul li ul.dropdown {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    color: #10bbf1;
+
+}
+
+ul li a:hover {
+  
+    color: #10bbf1;
+}
+
+ul li:hover ul.dropdown {
+    display: block;
+    text-align: left;
+}
+
+
+/*@keyframes change {
+    0% {
+        background-image: url(images/pumps.jpg);
+    }
+
+    20% {
+        background-image: url(images/driver.jpg);
+    }
+
+    40% {
+        background-image: url(images/truck.jpg);
+    }
+
+    60% {
+        background-image: url(images/engine_oil.jpg);
+    }
+
+    80% {
+        background-image: url(images/pumping.jpg);
+    }
+
+    100% {
+        background-image: url(images/pumps.jpg);
+    }
+}
+*/
+.home-text {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.home-text h1 {
+    color: #e1aeae;
+    font-size: 50px;
+    color: #ffffff;
+    line-height: 56px;
+    font-weight: 700;
+    margin: 0 0 20px;
+}
+
+.home-text p {
+    margin: 0;
+    overflow: hidden;
+}
+
+.home-text p span {
+    font-size: 80px;
+    color: rgb(255, 255, 255);
+    font-weight: 1000;
+    display: inline-block;
+    line-height: 100px;
+    display: none;
+    font-style: italic;
+
+}
+
+.home-text p span.text-in {
+    display: block;
+    animation: textIn .8s ease;
+}
+
+.home-text p span.text-out {
+    animation: textOut .8s ease;
+}
+
+@keyframes textIn {
+    0% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes textOut {
+    0% {
+        transform: translateY(0%);
+    }
+
+    100% {
+        transform: translateY(-100%);
+
+    }
+}
+
+.image {
+    height: 125px;
+    width: 150px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+.container-fluid
+{
+width: 100%;
+height: auto;
+padding: 0px 0px 80px 0px;
+height: 550px;
+}
+.container
+{
+    padding:0 20px;
+    margin:0 auto;
+    max-width: 1300px;
+    padding-bottom: 70px;
+}
+
+
+.container .product-list
+{
+display: flex;
+flex-wrap: wrap;
+gap:25px;
+width:100%;
+}
+.container .product-list .product
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap:10px;
+    justify-content: center;
+
+
+}
+
+.container .product-list .product .box{
+    text-align: center;
+    border-radius: 20px;
+    padding:20px;
+    background-color: #fff;
+    width: 250px;
+    height: 300px;
+    box-shadow: 10px 10px 9px 0px rgba(0,0,0,0.1);
+ 
+ }
+
+ .container .product-list .product.box img{
+    height: 100px;
+    width:100px;
+    margin: auto;
+    float: center;
+ }
+ 
+
+ .name{
+    color:black;
+    font-size: 20px;
+    letter-spacing: 8px;
+    font-weight: 200;
+ }
+
+
+ 
+ .container .products .product .box .discription{
+    font-size: 13px;
+    color:var(--black);
+    padding:5px 0;
+ }
+ 
+ .container .product-list .product.box.price{
+ 
+    top:10px; left:10px;
+    padding:5px 10px;
+    border-radius: 5px;
+    background-color:var(--blue);
+    color:white;
+    font-size: 20px;
+ }
+ 
+ .input{
+    margin:10px 0;
+    width: 25%;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 16px;
+    color:black;
+    padding:6px 10px
+ }
+
+
+.container .product-list .product h3
+{
+    color:black;
+    font-size: 20px;
+    letter-spacing: 6px;
+    font-weight: 200;
+}
+
+
+
+.container .product-list .product img
+{
+    height: 140px;
+    width:140px;
+    margin-left: 40px;
+}
+
+.price
+{
+   
+    
+    padding:5px 6px;
+    border-radius: 5px;
+   
+    color:#034e88;
+    width: 150px;
+    height: 40px;
+    margin-left: 30px;
+    font-size: 20px;
+    letter-spacing: 6px;
+    font-weight: 200;
+}
+
+.img{
+   width:100px;
+}
+
+
+
+ 
+.btn,
+.delete-btn,
+.option-btn{
+   display: inline-block;
+   padding:10px 30px;
+   cursor: pointer;
+   font-size: 18px;
+   color:white;
+   text-transform: capitalize;
+}
+
+.btn:hover,
+.delete-btn:hover,
+.option-btn:hover{
+   background-color: #345870;
+}
+
+.btn{
+   background-color: var(--blue);
+   margin-top: 10px;
+   font-size: 15px;
+   border-radius: 10px;
+   border-color: var(--blue);
+}
+
+.delete-btn{
+   background-color: var(--red);
+}
+
+.option-btn{
+   background-color: #ddd;
+}
+
+
+.address{
+    width:200px;
+    height: 200px;
+    margin: auto;
+    background-color: var(--light);
+}
+
+a.shop{
+    text-decoration: none;
+    background-color: var(--blue);
+    width:130px;
+    margin-left: 550px;
+    padding: 8px 12px;
+    color: var(--light);
+    border-color: var(--blue);
+    text-align: center;
+    border-radius: 10px;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
+     transition: transform .4s;}
+
+
+
+     .column {
+        float: left;
+        width: 22%;
+        padding: 0 10px;
+      }
+      
+      /* Remove extra left and right margins, due to padding */
+      .row {
+        margin-left: 130px;
+      }
+      
+      /* Clear floats after the columns */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      
+      /* Responsive columns */
+      @media screen and (max-width: 600px) {
+        .column {
+          width: 100%;
+          display: block;
+          margin-bottom: 20px;
+        }
+      }
+      
+      /* Style the counter cards */
+      .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        padding: 16px;
+        text-align: center;
+        background-color: #fff;
+        border-radius: 10px;
+      }
+
+
+
+      .fuel {
+        font-weight: 200;
+        font-size: 1.8em;
+        text-transform: uppercase;
+        letter-spacing: 0.5em;
+        color:#fff;
+    font-size: 60px;
+    letter-spacing: 15px;
+    font-weight: 700;
+      }
+      
+      .fuel .letter {
+        display: inline-block;
+        line-height: 1em;
+      }
+
+
+      .fuel2 {
+        font-weight: 200;
+        font-size: 1.8em;
+        text-transform: uppercase;
+        letter-spacing: 0.5em;
+        color:#fff;
+    font-size: 60px;
+    letter-spacing: 15px;
+    font-weight: 700;
+      }
+      
+      .fuel2 .letter {
+        display: inline-block;
+        line-height: 1em;
+      }

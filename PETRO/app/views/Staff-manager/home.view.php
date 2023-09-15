@@ -67,12 +67,6 @@
                 </a>
             </li>
             <li>
-                <a href="<?php echo ROOT ?>/Staff-manager/Feedback">
-                    <i class='bx bxs-message-rounded-check'></i>
-                    <span class="text">User Feedback</span>
-                </a>
-            </li>
-            <li>
                 <a href="">
                     <!-- <i class='bx bxs-group'></i>
                     <span class="text">Salary Percentage </span> -->

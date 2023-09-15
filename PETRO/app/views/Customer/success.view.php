@@ -135,22 +135,7 @@
         <!-- MAIN -->
         <main>
 
-
-
-
-
-
-
-
-
-
             <div class="form--container">
-
-
-
-
-
-
 
 
                 <div class="container">
@@ -160,17 +145,7 @@
 
                 </div>
 
-
-
-
-
-
-
-
             </div>
-
-
-
 
         </main>
         <!-- MAIN -->

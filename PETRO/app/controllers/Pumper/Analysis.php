@@ -23,6 +23,7 @@ class Analysis extends Controller{
                 'date'=>trim($_POST['bdaymonth']),
               
             ];
+            // call same function in model
             $result = $this->Analysis->loading($data);
             $this->view('Pumper/Analysis',$result);
         }

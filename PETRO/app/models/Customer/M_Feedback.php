@@ -46,11 +46,14 @@ class M_Feedback extends Model
       
 
         $status =$data ['status'];
+    
         $feedback =$data ['feedback'];
       
+
+    
   
 
-         $sql = "INSERT INTO $this->table2 (status,feedback) VALUES('$status','$feedback')";
+         $sql = "INSERT INTO $this->table2 (user_id,rating,feedback) VALUES('$id','$status','$feedback')";
          $query3 = $result1->query($sql); 
 
          if($query3){

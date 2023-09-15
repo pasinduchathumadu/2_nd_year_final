@@ -23,7 +23,7 @@ class View_dis extends Controller
        
         if($_SERVER['REQUEST_METHOD']=='POST'){
             $data=[
-                'id'=>trim($_POST['distribution_manager_id']),
+                'email'=>trim($_POST['email']),
                 
             ];
             $this->view->remove($data);

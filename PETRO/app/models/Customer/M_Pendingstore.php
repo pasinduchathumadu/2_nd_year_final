@@ -11,17 +11,17 @@ class M_Pendingstore extends Model
         $fname=$_SESSION['CUS_first_name'];
 
         $result = $this->connection();
-        $sql="select *from $this->table where user_id = '".$id."' ORDER BY Oid DESC";
+        $sql="select *from $this->table where user_id = '".$id."' AND status=0 ORDER BY Oid DESC";
         
         $query = $result->query($sql);
         
 
-        $sql2="select *from $this->table2 where user_id = '".$id."' ORDER BY Oid DESC";
+        $sql2="select *from $this->table2 where user_id = '".$id."' AND status=0 ORDER BY Oid DESC";
         
         $query2 = $result->query($sql2);
 
 
-        $sql6="select *from $this->table3  where id = '".$id."'" ;
+        $sql6="select *from $this->table3  where id = '".$id."' AND remark='pending'" ;
         $query6 = $result->query($sql6);
 
 

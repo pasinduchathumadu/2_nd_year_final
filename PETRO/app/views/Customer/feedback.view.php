@@ -172,20 +172,26 @@ if(empty($data['error'])){
                     <form action="<?php echo ROOT ?>/Customer/Feedback/add " method="POST">
                <br>
  <p class="feedback"> How is Our Service</p>   <br>           
-<input type="radio"  name="status" value="Worst">
-<label for="html">Worst</label>
-<input type="radio"  name="status" value="Average">
-<label for="css">Average</label>
-<input type="radio"  name="status" value="Good">
-<label for="javascript">Good</label> 
-<input type="radio"  name="status" value="Best">
-<label for="javascript">Best</label> 
+<input type="radio"  name="status" value="very Satisfied" required>
+<label for="feedback">Very Satisfied</label>
+<input type="radio"  name="status" value="satisfied" required>
+<label for="feedback">Satisfied</label>
+<input type="radio"  name="status" value="neutral" required>
+<label for="feedback">Neutral</label> 
+<input type="radio"  name="status" value="dissatisfied" required>
+<label for="feedback">Dissatisfied</label> 
+<input type="radio"  name="status" value="very dissatisfied" required>
+<label for="feedback">Very Dissatisfied</label> 
 <br><br>
 
   
           
  <input class="complaint2" placeholder="Feedback" name="feedback" required><br><br>
 </div><br><br>
+
+
+
+
               <button type="submit" class="button">SEND</button>
 </form>
   

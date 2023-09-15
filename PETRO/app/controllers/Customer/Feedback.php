@@ -31,6 +31,7 @@ class Feedback extends Controller
                 'id' => $id,
          
                 'status' => trim( $_POST['status']),
+            
                 'feedback' => trim( $_POST['feedback']),
               
                

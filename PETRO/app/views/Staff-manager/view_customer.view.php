@@ -69,12 +69,6 @@
                 </a>
             </li>
             <li>
-                <a href="<?php echo ROOT ?>/Staff-manager/Feedback">
-                    <i class='bx bxs-message-rounded-check'></i>
-                    <span class="text">User Feedback</span>
-                </a>
-            </li>
-            <li>
                 <a href="">
                     <!-- <i class='bx bxs-group'></i>
                     <span class="text">Salary Percentage </span> -->
@@ -161,7 +155,10 @@
 
             <div class="table-data">
                 <div class="order">
+                    <div class="head">
                         <h3>Filter :</h3>
+                        
+                    </div>
                     <div class= "filter">
                         <Select name= "filter" id="filter">
                             <option vlaue="All Customers">All Customers</option>
@@ -172,7 +169,13 @@
                     </div>
                     
                 </div>
-                
+                <div class="todo">
+                    <div class="head">
+                        <h3>Todos</h3>
+                        
+                    </div>
+
+                </div>
             </div>
             
             <!-- print error massage -->
@@ -242,7 +245,6 @@
     <!-- CONTENT -->
 
     <script src="<?php echo ROOT ?>/CSS/Staff-manager/script.js"></script>
-    
     <script>
         //get action of the filter drop down
         let selectMenu = document.querySelector("#filter");
@@ -252,8 +254,6 @@
         //do this when changes happen on filter drop down
         selectMenu.addEventListener('change',()=>{
         const searchTerm = selectMenu.value.toLowerCase();
-
-        console.log(searchTerm);
         
         //when select All Customer show all records
         if(searchTerm == "all customers"){

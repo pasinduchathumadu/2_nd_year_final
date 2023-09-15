@@ -1,18 +1,3 @@
-<?php
-//shows only if there are record
-    $flag='';
-    if(empty($data['no record'])){
-        $flag=true;
-
-    }
-    else{
-        $flag=false;
-    }
-?>
-
-
-
-
 <!DOCTYPE html>
 <html>
 
@@ -79,12 +64,6 @@
                 <a href="<?php echo ROOT ?>/Staff-manager/Salary_Rate">
                     <i class='bx bx-line-chart'></i>
                     <span class="text">Salary Percentage </span>
-                </a>
-            </li>
-            <li>
-                <a href="<?php echo ROOT ?>/Staff-manager/Feedback">
-                    <i class='bx bxs-message-rounded-check'></i>
-                    <span class="text">User Feedback</span>
                 </a>
             </li>
             <li>
@@ -175,35 +154,26 @@
 
                 <!-- filtering -->
                 <div class="order">
-        
-                    <h3> Filter  :</h3>
+                    <div class="head">
+                        <h3>Filter :</h3>
+                    </div>
                     <div class= "filter">
-                        <Select name= "filter" id="pumpfilter">
+                        <Select name= "filter" id="filter">
                             <option vlaue="All Pumper">All Pumper</option>
                             <option vlaue="Active">Active Pumper</option>
                             <option vlaue="Remove">Suspend Pumper</option>
+
                         </Select>
                     </div>
                 </div>
 
-                <!-- <div class="todo">
+                <div class="todo">
                     <div class="head">
                         <h3>Todos</h3>
                     </div>
-                    <input type="text" id="myInput" onkeyup='tableSearch()' placeholder="Search" class="search"><span class="txt1">
 
-                </div> -->
+                </div>
             </div>
-
-
-            <!-- <h3>Filter :</h3>
-            <div class= "filter">
-                <Select name= "filter" id="pumpfilter">
-                    <option vlaue="All Pumper">All Pumper</option>
-                    <option vlaue="Active">Active Pumper</option>
-                    <option vlaue="Remove">Suspend Pumper</option>
-                </Select>
-            </div> -->
 
             <!-- print error massage -->
             <?php
@@ -217,8 +187,6 @@
             };
             ?>
 
-
-            <!-- All pumper details -->
             <div class="table-data">
                 <table class="table" id="table">
                     <thead>
@@ -228,7 +196,6 @@
                             <th> Last Name </th>
                             <th> Phone Number </th>
                             <th> Email </th>
-                            <th> Shift Time </th>
                             <th style="display : none;"> Status</th>
                             <th> View </th>
                             <th> Suspend/Active </th>
@@ -244,8 +211,6 @@
                             <td> <?php echo $row["lname"];?> </td>
                             <td> <?php echo $row["phone"];?> </td>
                             <td> <?php echo $row["email"];?> </td>
-                            <td> <?php echo $row["shift"];?> </td>
-
                             <td style="display : none;"><?php echo $row["status"]==0 ?'Suspend Pumper' : 'Active Pumper' ?>
                             <td> <button value="<?php echo $row['id'];?>" onclick="window.location.href= '<?php echo ROOT ?>/Staff-manager/View_pumper_Profile?pump_id=<?php echo $row['id'];?>';">View</button> </td>
                             
@@ -266,60 +231,6 @@
                         ?>
                 </table>
             </div>
-            
-            <br><br>
-
-            <!-- Completed order by pumper -->
-            <div class="head-title">
-                <div class="left">
-                    <h1>Pumping History</h1>
-                </div>
-            </div>
-
-            <!-- Searching -->
-            <div class="table-data">
-                <div class="order">
-                    <h3>Search : </h3>
-                    <input type="text" id="myInput" onkeyup='tableSearch()' placeholder="Search" class="search"><span class="txt1"> 
-                </div>
-            </div>
-            
-            <div class="table-data">
-            <div class="attendance-list">
-                <div class="bar"> 
-                <table class="table" id="pumpingtable" data-filter-control="true" data-show-search-clear-button="true">
-                    <thead>
-                        <tr>
-                            <th> Order ID </th>
-                            <th> Pumper ID </th>
-                            <th> Fuel Machine ID </th>
-                            <th> Fuel Type </th>
-                            <th> Vehical Number </th>
-                            <th> Pumped Liter </th>
-                        </tr>
-                    </thead>
-                        <tr class="pumpingtr">
-                        <?php
-                            while($row = mysqli_fetch_assoc($data['pumperResult'])){
-                                
-                        ?>
-                            <td class="pumpingtd"> <?php echo $row['order_id'];?> </td>
-                            <td class="pumpingtd"> <?php echo $row['pumper_id'];?> </td>
-                            <td class="pumpingtd" > <?php echo $row["MachineID"];?> </td>
-                            <td class="pumpingtd"> <?php echo $row["Fuel_Type"];?> </td>
-                            <td class="pumpingtd"> <?php echo $row["vehicle_no"];?> </td>
-                            <td class="pumpingtd"> <?php echo $row["pumped_liters"];?> </td>
-                            
-                        </tr>
-                        <?php
-                            }
-                        ?>
-                </table>
-                </div>
-            </div>
-            </div>
-
-            
 
 
         </main>
@@ -331,107 +242,63 @@
 
     <script>
         //get action of the filter drop down
-        let selectMenu = document.getElementById("pumpfilter");
+        let selectMenu = document.querySelector("#filter");
         //take recode of the output table
-        let table = document.getElementById("table");
+        let table = document.querySelector("#table");
 
         //do this when changes happen on filter drop down
         selectMenu.addEventListener('change',()=>{
-            const searchTerm = selectMenu.value.toLowerCase();
-            console.log(searchTerm);
-            console.log("hi");
-            //when select All Pumper show all records
-            if(searchTerm == "all pumper"){
-                for (let i = 1; i < table.rows.length; i++) {
-                    const row = table.rows[i];
-                    row.style.display = '';
-                }
-            }else{
-                //travel row by row
-                for (let i = 1; i < table.rows.length; i++) {
-                    const row = table.rows[i];
-                    const cells = row.cells;
-                    let matchesSearch = false;
-                
-                    //travel sell by sell in a row
-                    for (let j = 0; j < cells.length; j++) {
-                    const cell = cells[j];
-                        //find the selected option is in the cells
-                        if (cell.textContent.toLowerCase().includes(searchTerm)) {
-                            matchesSearch = true;
-                            break;
-                        }
-                    }
+        const searchTerm = selectMenu.value.toLowerCase();
+        console.log("done");
+        
+        //when select All Pumper show all records
+        if(searchTerm == "all pumper"){
+            for (let i = 1; i < table.rows.length; i++) {
+                const row = table.rows[i];
+                row.style.display = '';
+            }
+        }else{
+            //travel row by row
+            for (let i = 1; i < table.rows.length; i++) {
+                const row = table.rows[i];
+                const cells = row.cells;
+                let matchesSearch = false;
             
-                    //founded rows print and other rows doesnt show
-                    if (matchesSearch) {
-                    row.style.display = '';
-                    } else {
-                    row.style.display = 'none';
+                //travel sell by sell in a row
+                for (let j = 0; j < cells.length; j++) {
+                const cell = cells[j];
+                    //find the selected option is in the cells
+                    if (cell.textContent.toLowerCase().includes(searchTerm)) {
+                        matchesSearch = true;
+                        break;
                     }
+                }
+        
+                //founded rows print and other rows doesnt show
+                if (matchesSearch) {
+                row.style.display = '';
+                } else {
+                row.style.display = 'none';
                 }
             }
+        }
+    
+        
         });
 
-
-
-        function tableSearch() {
-            let input, filter, table, tr, td, txtValue;
-
-            //Intialising Variables
-            input = document.getElementById("myInput");
-            filter = input.value.toUpperCase();     //Searching string in uppercase
-            table = document.getElementById("pumpingtable");
-            tr = table.getElementsByTagName("tr"); // get element in tr tag
-
-            for (let i = 0; i < tr.length; i++) {
-                //get all td sql line first 2 column row by row
-                td = tr[i].getElementsByTagName("td")[0];
-                td1 = tr[i].getElementsByTagName("td")[1];
-                td2 = tr[i].getElementsByTagName("td")[2];
-                td3 = tr[i].getElementsByTagName("td")[3];
-                td4 = tr[i].getElementsByTagName("td")[4];
-                
-                if (td||td1||td2||td3||td4) {
-                    //get all td sql data
-                    txtValue = td.textContent || td.innerText;
-                    txtValue1 = td1.textContent || td1.innerText;
-                    txtValue2 = td2.textContent || td2.innerText;
-                    txtValue3 = td3.textContent || td3.innerText;
-                    txtValue4 = td4.textContent || td4.innerText;
-
-                    //compare serching text and table data of first 5 column
-                    //indexOf(filter) > searches the string and returns the index of the first occurrence
-                    //if found string then display the row in table
-                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                        tr[i].style.display = "";
-                    }else if (txtValue1 .toUpperCase().indexOf(filter) > -1) {
-                        tr[i].style.display = "";
-                    } else if (txtValue2 .toUpperCase().indexOf(filter) > -1) {
-                        tr[i].style.display = "";
-                    }else if (txtValue3 .toUpperCase().indexOf(filter) > -1) {
-                        tr[i].style.display = "";
-                    }else if (txtValue4 .toUpperCase().indexOf(filter) > -1) {
-                        tr[i].style.display = "";
-                    } else {
-                        tr[i].style.display = "none";
-                    }
-                }
-            }
-
-        }
-
-        
 
     </script>
 
     <script>
+        
         // JS for profile icon drop down
         let submenu = document.getElementById("submenu");
 
         function toggleMenu(){
             submenu.classList.toggle("open-menu");
         }
+        
     </script>
+
 </body>
 </html>

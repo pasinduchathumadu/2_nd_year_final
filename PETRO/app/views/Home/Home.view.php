@@ -1,124 +1,77 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>PETRO</title>
-	<link rel="stylesheet" href="<?php echo ROOT ?>/CSS/Common/home.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PETRO</title>
+    <link rel="stylesheet" href="<?php echo ROOT?>/CSS/Common/home.css">
 </head>
 
 <body>
-	<div class="hero">
-		<div class="navigation_bar">
-			<img src="<?php echo ROOT ?>/image/Common/petro.jpg" alt="petro logo" class="logo">
-			<ul>
-				<li><a href="">Home</a></li>
-				<li><a href="">Reviews</a></li>
-				<li><a href="">About Us</a></li>
-				<li><a href="">Contact Us</a></li>
-			</ul>
-		</div>
-		<div class="banner">
-			<div class="left-column">
-				<div>
-					<h3><span>Advanced</span> Fuel For <span>Advanced</span> Vehicle</h3>
-					<h4><br>
-						Welcome to the official website of PETRO filling station<br>
-						Log into your account for better expirience</h4>
-				</div>
-				<div class="btn">
-					<a href="<?php echo ROOT ?>/Home/Login"><button type="button" class="primary-btn">Login</button></a>
-					<a href="view_availability.php"><button type="button">View fuel Availability</button></a>
-				</div>
-				<div class="social-icons">
-					<img src="<?php echo ROOT ?>/image/common/instagram.png" alt="">
-					<img src="<?php echo ROOT ?>/image/common/twitter.png" alt="">
-					<img src="<?php echo ROOT ?>/image/common/facebook.png" alt="">
-				</div>
-			</div>
-			<div class="right-column">
-				<div class="img-slider">
-					<div class="slide active">
-						<img src="<?php echo ROOT ?>/image/Common/pumps.jpg" alt="">
-					</div>
-					<div class="slide">
-						<img src="<?php echo ROOT ?>/image/Common/driver.jpg" alt="">
-					</div>
-					<div class="slide">
-						<img src="<?php echo ROOT ?>/image/Common/pumping.jpg" alt="">
-					</div>
-					<div class="slide">
-						<img src="<?php echo ROOT ?>/image/Common/engine_oil.jpg" alt="">
-      				</div>
-					<div class="slide">
-						<img src="<?php echo ROOT ?>/image/Common/truck.jpg" alt="">
-					</div>
-					<div class="navigation">
-						<div class="btn active"></div>
-						<div class="btn"></div>
-						<div class="btn"></div>
-						<div class="btn"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	</div>
-	<script type="text/javascript">
-    var slides = document.querySelectorAll('.slide');
-    var btns = document.querySelectorAll('.btn');
-    let currentSlide = 2;
 
-    // Javascript for image slider manual navigation
-    var manualNav = function(manual){
-      slides.forEach((slide) => {
-        slide.classList.remove('active');
+    <div class="Section_top">
+        <header>
+            <a href="#"><img src="<?php echo ROOT?>/image/Common/log.png" alt="" class="image"></a>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="<?php echo ROOT ?>/Home/Home">Home</a></li>
+                    <li><a href="<?php echo ROOT ?>/Home/Available">Availability</a>
+                      
+                    </li>
+                    <li><a href="<?php echo ROOT ?>/Home/Aboutus">About Us</a></li>
+                    <li><a href="<?php echo ROOT ?>/Home/Login">LogIn</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="content">
+            <div class="home-text">
+			
+                <p class="animate-text">
+                    <span>Advance Fuel For Advanced Vehicles</span>
+                    <span>High Quality Lubricants</span>
+                    <span>Online payments</span>
+                </p>
+            </div>
+        </div>
+    </div>
+   
+    <script>
+        const txts = document.querySelector(".animate-text").children,
+            txtsLen = txts.length;
+        let index = 0;
+        const textInTimer = 6000,
+            textOutTimer = 5600;
 
-        btns.forEach((btn) => {
-          btn.classList.remove('active');
-        });
-      });
+        function animateText() {
+            for (let i = 0; i < txtsLen; i++) {
+                txts[i].classList.remove("text-in", "text-out");
+            }
+            txts[index].classList.add("text-in");
 
-      slides[manual].classList.add('active');
-      btns[manual].classList.add('active');
-    }
+            setTimeout(function () {
+                txts[index].classList.add("text-out");
+            }, textOutTimer)
 
-    btns.forEach((btn, i) => {
-      btn.addEventListener("click", () => {
-        manualNav(i);
-        currentSlide = i;
-      });
-    });
+            setTimeout(function () {
 
-    // Javascript for image slider autoplay navigation
-    var repeat = function(activeClass){
-      let active = document.getElementsByClassName('active');
-      let i = 1;
-
-      var repeater = () => {
-        setTimeout(function(){
-          [...active].forEach((activeSlide) => {
-            activeSlide.classList.remove('active');
-          });
-
-        slides[i].classList.add('active');
-        btns[i].classList.add('active');
-        i++;
-
-        if(slides.length == i){
-          i = 0;
+                if (index == txtsLen - 1) {
+                    index = 0;
+                }
+                else {
+                    index++;
+                }
+                animateText();
+            }, textInTimer);
         }
-        if(i >= slides.length){
-          return;
-        }
-        repeater();
-      }, 5000);
-      }
-      repeater();
-    }
-    repeat();
+
+        window.onload = animateText;
+
     </script>
+
 </body>
+
+
 
 </html>

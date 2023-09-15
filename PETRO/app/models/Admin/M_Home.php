@@ -3,19 +3,34 @@
 class M_Home extends Model{
     protected $table = 'fuel_availability';
 
-    protected $table1='user_form';
-    protected $table2 = 'fuel_stock';
+    protected $table1 ='registered_users';
 
-    protected $table3 = 'pumper';
+    protected $table2 = 'complain';
 
-    protected $table4 = 'customer_manager';
+   
+    
 
-    protected $table5 = 'distribution_manager';
-
+    
+    
     
     public function update_fuel(){
         $result = $this->connection();
 
+
+        $sql="select COUNT(com_id) AS COM_ID from $this->table2 where status = 'Pending'";
+        $query1=$result->query($sql);
+
+        while($row = $query1->fetch_array()){
+            $pending = $row['COM_ID'];
+        }
+        $sql="select COUNT(com_id) AS COM_ID from $this->table2 where status = 'Replied'";
+        $query1=$result->query($sql);
+
+        while($row = $query1->fetch_array()){
+            $replied = $row['COM_ID'];
+        }
+
+     
         $sql1 = "select * from $this->table where fuel_id= 'O92'";
         $query1 = $result->query($sql1);
         $sql2 = "select * from $this->table where fuel_id= 'O95'";
@@ -62,22 +77,22 @@ class M_Home extends Model{
                 $price4 = $row['price'];
             }
         }
-        $sql="select COUNT(id) AS COUNT1 FROM $this->table1";
+        $sql="select COUNT(email) AS COUNT1 FROM $this->table1 where role = 'customer' and status = 1";
         $query=$result->query($sql);
         while($row=$query->fetch_array()){
             $count1=$row['COUNT1'];
         }
-        $sql="select COUNT(id) AS COUNT2 FROM $this->table3";
+        $sql="select COUNT(email) AS COUNT2 FROM $this->table1 where role = 'pumper' and status = 1";
         $query=$result->query($sql);
         while($row=$query->fetch_array()){
             $count2=$row['COUNT2'];
         }
-        $sql="select COUNT(customer_manager_id) AS COUNT3 FROM $this->table4";
+        $sql="select COUNT(email) AS COUNT3 FROM $this->table1 where role = 'staff' and status = 1";
         $query=$result->query($sql);
         while($row=$query->fetch_array()){
             $count3=$row['COUNT3'];
         }
-        $sql="select COUNT(distribution_manager_id) AS COUNT4 FROM $this->table5";
+        $sql="select COUNT(email) AS COUNT4 FROM $this->table1 where role = 'manager' and status = 1";
         $query=$result->query($sql);
         while($row=$query->fetch_array()){
             $count4=$row['COUNT4'];
@@ -108,6 +123,8 @@ class M_Home extends Model{
                 'count3'=>$count3,
                 'count4'=>$count4,
                 'loading'=>'1',
+                'replied'=>$replied,
+                'pending'=>$pending,
                 'err'=>'',
             ];
             return $data;

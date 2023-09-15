@@ -23,7 +23,7 @@ class View_cus extends Controller
        
         if($_SERVER['REQUEST_METHOD']=='POST'){
             $data=[
-                'id'=>trim($_POST['customer_manager_id']),
+                'email'=>trim($_POST['email']),
                 
             ];
             $result=$this->view->remove($data);

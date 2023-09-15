@@ -142,7 +142,7 @@
     
             <a href="<?php echo ROOT ?>/Customer/Profile" class="profile">
  
-    <img src="<?php echo ROOT ?>/image/pp.png"  style="width:35px;height:35px;"></a>
+    <img src="<?php echo ROOT ?>/image/bp.jpg"  style="width:35px;height:35px;"></a>
         
         </nav>
         <!-- NAVBAR -->
@@ -192,29 +192,22 @@
                                    
 			
               <br><br>           
-			 
-			  
-			
-        
-            
-     
-         
 		   
               <button onclick="document.getElementById('id01').style.display='block'" type="button" class="btn6">Remove</button><br><br>
        
-		<a href="profile.php" class="back">Back</a>
+		<a href="<?php echo ROOT ?>/Customer/Profile" class="back">Back</a>
 
         <div id="id01" class="modal">
-  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
 
-    <div class="container">
-        <br><br><br><br>  <br><br><br><br>
-      <h1>Delete Vehicle</h1>
-      <p>Are you sure you want to remove this Vehicle?</p>
+             <div class="container">
+             <br><br><br><br>  <br><br><br><br>
+             <h1>Delete Vehicle</h1>
+             <p>Are you sure you want to remove this Vehicle?</p>
     
       <div class="clearfix">
         <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-        <button type="submit" onclick="document.getElementById('id01').style.display='none'" class="deletebtn">Delete</button>
+        <button type="submit" onclick="document.getElementById('id01').style.display='none'" class="deletebtn">Remove</button>
       </div>
     </div>
 </div>
@@ -223,18 +216,6 @@
     
    </form>
    
-   
-   
-   
-   
-   
-  
-   
-           
-        
-                 
-  
-
 
 
                 </div>
@@ -322,23 +303,8 @@ echo ' <a href='.$url4.' target="_blank" class="add"> + Add Machine </a>';
 
 
 
-            </div></div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            </div>
+        </div>
 
 
         </main>

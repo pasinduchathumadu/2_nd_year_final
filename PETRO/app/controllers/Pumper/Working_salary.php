@@ -21,6 +21,7 @@ class working_salary extends Controller{
 
             $data=[
                 'date'=>trim($_POST['bdaymonth']),
+                'download'=>0,
                 'err'=>'',
             ];
             $result=$this->salary->previous($data);
@@ -36,8 +37,16 @@ class working_salary extends Controller{
     }
 
     public function Download(){
+
+        $month = $_GET['month'];
+        $year = $_GET['year'];
+
+      
+        
         $data = [
             'download'=>1,
+            'month'=>$month,
+            'year'=>$year,
         ];
         $result=$this->salary->loading($data);
 

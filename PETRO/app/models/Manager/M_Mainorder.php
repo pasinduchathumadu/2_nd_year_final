@@ -55,6 +55,19 @@ class M_Mainorder extends Model
         while ($i < count($str_arr)) {
             $sql2 = "UPDATE $this->table2 SET status=1 WHERE Oid='" . $str_arr[$i] . "'";
             $query2 = $result->query($sql2);
+
+            $sql3 = "SELECT COUNT(quantity) AS quantity from $this->table2  WHERE Oid='" . $str_arr[$i] . "'";
+            $query3 = $result->query($sql3);
+            
+        
+            $row=$query3->fetch_array();
+            $count= $row['quantity'];
+            
+            $sql4 = "UPDATE  $this->table3 SET points=points+".$count."*2 WHERE id='".$user_id. "'";
+            $query4 = $result->query($sql4);
+
+
+
             $i++;
         }
     }

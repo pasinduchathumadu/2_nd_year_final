@@ -18,6 +18,7 @@ class Distribution extends Controller{
             $last = trim($_POST['Last_name']);
             $nic = trim($_POST['distribution_manager_NIC']);
             $password = trim ($_POST['password']);
+            $phone = trim ($_POST['phone']);
             $email = trim($_POST['distribution_manager_email']);
 
             $data=[
@@ -27,6 +28,7 @@ class Distribution extends Controller{
                 'nic'=>$nic,
                 'password'=>$password,
                 'email'=>$email,
+                'phone'=>$phone,
             ];
             $result=$this->manager->register($data);
             if(empty($result['error'])){

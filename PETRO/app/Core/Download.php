@@ -4,7 +4,10 @@ use Dompdf\Dompdf;
 use Dompdf\Options;
 class Download{
 public function first($data){
-require 'vendor/autoload.php';
+
+    require 'vendor/autoload.php';
+    
+
    
 $dompdf = new Dompdf();
 $pdfoption = new Options();
@@ -15,12 +18,13 @@ $html ='<html><body><div style="text-align:center; color:red;font-size:20px">PET
 <div style="padding-top:10px;border:3px solid white; width: 600px; height: 400px;border-radius:10px;">
 <h1 style="text-align:left;padding-left:20px;">Pumper Details</h1>
 <ul style="float:left;font-size:20px;padding-left:20px;">
-    <p>Pumper ID :'.$data['id'].'</p>
-    <p>First Name:'.$data['first'].'</p>
-    <p>Last Name :'.$data['last'].'</p>
-    <p>Email     :'.$data['email'].'</p>
-    <p>Month     :'.$data['month'].'</p>
-    <p>Year      :'.$data['year'].'</p>
+<p>Pumper ID :'.$data['id'].'</p>
+<p>First Name:'.$data['first'].'</p>
+<p>Last Name :'.$data['last'].'</p>
+<p>Email     :'.$data['email'].'</p>
+<p>Month     :'.$data['month'].'</p>
+<p>Year      :'.$data['year'].'</p>
+   
 </ul>
 </div>
 <div class="my-class">
@@ -43,7 +47,7 @@ $html ='<html><body><div style="text-align:center; color:red;font-size:20px">PET
 </tr>
 <tr>
 <td style="border: 5px solid black; padding: 5px;">GROSS SALARY</td>
-<td style="border: 5px solid black; padding: 5px;">'.$data["GS"].'</td>
+<td style="border: 5px solid black; padding: 5px;">'.$data["GS_s"].'</td>
 </tr>
 <tr>
 <td style="border: 5px solid black; padding: 5px;">PROVIDENT FUND</td>

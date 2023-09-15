@@ -10,8 +10,8 @@ class M_complain extends Model{
         $result = $this->connection();
 
         $sql="select * from complain";
+
         $query = $result->query($sql);
-        
         $Viewed="select count(com_id) AS COUNT1 from complain where status= 'Viewed'";
         $Pending="select count(com_id) AS COUNT2 from complain where status= 'Pending'";
         $Replied="select count(com_id) AS COUNT3 from complain where status= 'Replied'";

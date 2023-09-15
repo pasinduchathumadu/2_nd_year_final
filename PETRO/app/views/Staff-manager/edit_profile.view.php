@@ -65,12 +65,6 @@
                 </a>
             </li>
             <li>
-                <a href="<?php echo ROOT ?>/Staff-manager/Feedback">
-                    <i class='bx bxs-message-rounded-check'></i>
-                    <span class="text">User Feedback</span>
-                </a>
-            </li>
-            <li>
                 <a href="">
                     <!-- <i class='bx bxs-group'></i>
                     <span class="text">Salary Percentage </span> -->
@@ -214,8 +208,7 @@
 
 
     <script src="<?php echo ROOT ?>/JS/Staff-manager/script.js"></script>
-    
-    <!-- Password Validation -->
+
     <script>
         //
         function test_str() {
@@ -231,18 +224,17 @@
             if (str.match(/[a-z]/g) && str.match(/[A-Z]/g) && str.match(/[0-9]/g) && str.match(/[^a-zA-Z\d]/g) && str.length >= 8)
                 res = "TRUE";
             else if(str.length > 0){
-                alert("Password should be at least 8 characters in length and should include at least one upper case letter, one number, and one special character.");
+                alert("Please use strong password with lowercase, uppercase, special character, digit and password should Minimum 8 characters");
             }
         }
-    </script>
 
-    <!-- JS for profile icon drop down -->
-    <script>
+        // JS for profile icon drop down
         let submenu = document.getElementById("submenu");
 
         function toggleMenu(){
             submenu.classList.toggle("open-menu");
         }
+
     </script>
 </body>
 

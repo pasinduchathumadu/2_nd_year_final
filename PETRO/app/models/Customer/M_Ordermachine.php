@@ -271,7 +271,7 @@ $query0=$result1->query($sql0);
            //check same machine order 2 times
 
 
-         $select2 =  "SELECT COUNT(Oid)AS count FROM $this->table5  WHERE id = '".$id."' AND  VMno='".$sNo."'";
+         $select2 =  "SELECT COUNT(Oid)AS count FROM $this->table5  WHERE id = '".$id."' AND  VMno='".$sNo."' AND (remark ='pending')";
          $query2 = $result1->query($select2);
         
 
@@ -393,9 +393,7 @@ $query30=$result1->query($sql30);
             
                     'points'=>$points,
                     'gene'=>$gene,
-                    'construction'=>$construction,
-                    'other'=>$other,
-                    'boats'=>$boats,
+                
                    
                     
                     'id'=>$id,

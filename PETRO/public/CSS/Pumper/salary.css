@@ -60,6 +60,8 @@ form .btn {
     position: relative;
     overflow: hidden;
     color: white;
+    border: 2px solid white;
+    transition: all 0.4s ease;
     background-color: var(--blue);
 }
 
@@ -68,13 +70,17 @@ form .btn .btn-layer {
     width: 300%;
     position: absolute;
     left: -100%;
+    
     background: var(--blue);
     border-radius: 5px;
-    transition: all 0.4s ease;
+    
 }
 
-form .btn:hover .btn-layer {
-    left: 0;
+form .btn:hover  {
+  background-color: var(--blue);
+  -ms-transform: scale(1.1);
+-webkit-transform: scale(1.1); 
+transform: scale(1.1);
 }
 .table {
     border-collapse: collapse;

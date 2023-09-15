@@ -9,13 +9,15 @@ class M_Storehistory extends Model
         $fname=$_SESSION['CUS_first_name'];
 
         $result = $this->connection();
+ 
+        //view product order table
+
         $sql="select *from $this->table where user_id = '".$id."' AND status=1 ORDER BY Oid DESC";
-        
         $query = $result->query($sql);
         
+         //view final table
 
         $sql2="select *from $this->table2 where user_id = '".$id."' AND status=1 ORDER BY Oid DESC";
-        
         $query2 = $result->query($sql2);
 
 

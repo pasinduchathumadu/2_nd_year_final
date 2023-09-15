@@ -1,12 +1,10 @@
 <?php
-    $flag='';
-    if(empty($data['error'])){
-        $flag=true;
-
-    }
-    else{
-        $flag=false;
-    }
+$flag = '';
+if (empty($data['error'])) {
+    $flag = true;
+} else {
+    $flag = false;
+}
 ?>
 
 
@@ -20,10 +18,10 @@
     <!-- Boxicons -->
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <!-- My CSS -->
-    <link rel="stylesheet" href="<?php echo ROOT?>/CSS/Pumper/working.css" text="text/css">
-    <link rel="stylesheet" href="<?php echo ROOT?>/CSS/Common/common.css" text="text/css">
-    
-   
+    <link rel="stylesheet" href="<?php echo ROOT ?>/CSS/Pumper/working.css" text="text/css">
+    <link rel="stylesheet" href="<?php echo ROOT ?>/CSS/Common/common.css" text="text/css">
+
+
 
     <title>AdminHub</title>
 </head>
@@ -46,8 +44,8 @@
             </li>
             <li class="active">
                 <a href="<?php echo ROOT ?>/Pumper/Working">
-                    <i class='bx bxs-shopping-bag-alt'></i>
-                    <span class="text">Working Report</span>
+                    <i class='bx bxs-report'></i>
+                    <span class="text">Pumped History</span>
                 </a>
             </li>
             <li>
@@ -65,7 +63,7 @@
             </li>
             <li>
                 <a href="<?php echo ROOT ?>/Pumper/Working_salary">
-                    <i class='bx bxs-message-dots'></i>
+                    <i class='bx bxs-report'></i>
                     <span class="text">Salary Report</span>
                 </a>
             </li>
@@ -78,16 +76,17 @@
 
             <li>
                 <a href="<?php echo ROOT ?>/Pumper/Complain">
-                    <i class='bx bxs-group'></i>
+                    <i class='bx bxs-envelope'></i>
                     <span class="text">Complain Box</span>
                 </a>
             </li>
 
 
+
         </ul>
         <ul class="side-menu">
             <li>
-                <a href="<?php echo ROOT?>/Pumper/Logout" class="logout">
+                <a href="<?php echo ROOT ?>/Pumper/Logout" class="logout">
                     <i class='bx bxs-log-out-circle'></i>
                     <span class="text">Logout</span>
                 </a>
@@ -95,15 +94,12 @@
         </ul>
     </section>
     <!-- SIDEBAR -->
-
-
-
     <!-- CONTENT -->
     <section id="content">
-    
+
         <nav>
             <i class='bx bx-menu'></i>
-           
+
             <form action="#">
                 <div class="form-input">
 
@@ -111,105 +107,104 @@
                     <button type="submit"><i class='bx bx-search'></i></button>
                 </div>
             </form>
-            <?php echo $_SESSION['first_name']?>
-      
+            <?php echo $_SESSION['first_name'] ?>
+
             <a href="#" class="profile">
                 <img src="<?php echo ROOT ?>/image/th.jpg">
             </a>
         </nav>
 
         <!-- MAIN -->
-    <main>
-           
+        <main>
+            <div class="table-data" id="table-data">
+                <div class="order">
+                    <div class="head">
+                        <h3>Fuel Pump History - <?php echo $data['date'] ?></h3>
+                        <h3><span class="txt">
+                                Pumper ID - <?php echo $data['ID'] ?></span></h3>
+                    </div>
+                    <div class="attendance-list">
+                        <div class="bar">
+                            <input type="text" id="myInput" onkeyup='tableSearch()' placeholder="Search" class="search"><span class="txt1">
+                                <button class="btn" onclick="openForm()">Filter</button></span>
+                            <table class="table" id="myTable" data-filter-control="true" data-show-search-clear-button="true">
+                                <thead>
+                                    <tr>
+                                        <th>Order ID</th>
+                                        <th>Date & Time</th>
+                                        <th>Vehicle_No</th>
+                                        <th>Fuel Type</th>
+                                        <th>Pump Machine</th>
+                                        <th>No of Liters</th>
+                                        <th>Payment</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    if ($flag == true) {
 
-    <div class="table-data" id="table-data" >
-        <div class="order">
-            <div class="head">
-                <h3>Fuel Pump History - <?php echo $data['date']?></h3><h3><span class="txt">
-                Pumper ID - <?php echo $data['ID']?></span></h3>
-            </div>
-            <div class="attendance-list">
-                <div class="bar"> 
-                    <input type="text" id="myInput" onkeyup='tableSearch()' placeholder="Search" class="search"><span class="txt1">
-                    <button  class="btn" onclick="openForm()">Filter</button></span>
-            
-        
-                    <table class="table" id="myTable" data-filter-control="true" data-show-search-clear-button="true">
-                        <thead>
-                            <tr>
-                                <th> <button onclick="sortTable(0)">Order ID</button></th>
-                                <th><button onclick="sortTable(1)">Date & Time</button></th>
-                                <th>Vehicle_No</th>
-                                <th>Fuel Type</th>
-                                <th>Pump Machine</th>
-                                <th>No of Liters</th>
-                                <th>Payment</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            if($flag==true){
-                                    
-                                    if (mysqli_num_rows($data['result']) > 0) {
-                                    while($row = mysqli_fetch_assoc($data['result'])) {
-                                    echo 
-                                    "<tr>
-                                        <td>".$row['order_id']."</td>
-                                        <td>".$row['time']."</td>
-                                        <td>".$row['vehicle_no']."</td>
-                                        <td>".$row['Fuel_Type']."</td>
-                                        <td>Machine ".$row['MachineID']."</td>
-                                        <td>".$row['pumped_liters']."</td>
-                                        <td>".$row['pay']."</td>
+                                        if (mysqli_num_rows($data['result']) > 0) {
+                                            while ($row = mysqli_fetch_assoc($data['result'])) {
+                                                echo
+                                                "<tr>
+                                        <td>" . $row['order_id'] . "</td>
+                                        <td>" . $row['time'] . "</td>
+                                        <td>" . $row['vehicle_no'] . "</td>
+                                        <td>" . $row['Fuel_Type'] . "</td>
+                                        <td>Machine " . $row['MachineID'] . "</td>
+                                        <td>" . $row['pumped_liters'] . "</td>
+                                        <td>" . $row['pay'] . "</td>
                         
                                     </tr>";
+                                            }
+                                        }
+                                    } else {
+                                    ?>
+                                        <br>
+                                        <p class="error"><?php echo $data['error']; ?></p>
+                                    <?php
                                     }
-                                }
-                            }
-                            else{
-                                echo $data['error'];
-                            }
-                            ?>
-                        </tbody>
-                    </table>
-            
+                                    ?>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-                
-                   
-                   
-    <div class= "form-inner">
-        <div id="myForm" class="form-popup">
-        
-            <form action="<?php echo ROOT?>/Pumper/Working/previous" method="post">
-                <a href="<?php echo ROOT?>/Pumper/Working" id="close-popup"><i class='bx bx-x'></i><a>
-                    <label class="FROM">From :</label>  
-                    <div class= "field">
-                        <input type="date" name="from" required/>
-                    </div><br>
-                    <label class="TO">To :</label>  
-                    <div class="field">
-                         <input type="date" name="to" required/> 
-                    </div><br><br>
-                    <button type="submit" name="submit" class="btn">Click Here</button>
-            </form> 
-        </div>
-    </div>
-    <div class="overlay"></div>
-    
 
 
-    </main>
-        
+
+            <div class="form-inner">
+                <div id="myForm" class="form-popup">
+
+                    <form action="<?php echo ROOT ?>/Pumper/Working/previous" method="post">
+                        <a href="<?php echo ROOT ?>/Pumper/Working" id="close-popup"><i class='bx bx-x'></i><a>
+                                <label class="FROM">From :</label>
+                                <div class="field">
+                                    <input type="date" name="from" required />
+                                </div><br>
+                                <label class="TO">To :</label>
+                                <div class="field">
+                                    <input type="date" name="to" required />
+                                </div><br><br>
+                                <button type="submit" name="submit" class="btn">Click Here</button>
+                    </form>
+                </div>
+            </div>
+            <div class="overlay">
+
+            </div>
+
+
+        </main>
+
         <!-- MAIN -->
     </section>
     <!-- CONTENT -->
 
 
     <script>
-        
         function tableSearch() {
             let input, filter, table, tr, td, txtValue;
 
@@ -224,8 +219,8 @@
                 td1 = tr[i].getElementsByTagName("td")[1];
                 td2 = tr[i].getElementsByTagName("td")[2];
                 td3 = tr[i].getElementsByTagName("td")[3];
-                
-                if (td||td1||td2||td3) {
+
+                if (td || td1 || td2 || td3) {
                     txtValue = td.textContent || td.innerText;
                     txtValue1 = td1.textContent || td1.innerText;
                     txtValue2 = td2.textContent || td2.innerText;
@@ -234,12 +229,11 @@
 
                     if (txtValue1.toUpperCase().indexOf(filter) > -1) {
                         tr[i].style.display = "";
-                    } 
-                    else if (txtValue .toUpperCase().indexOf(filter) > -1) {
+                    } else if (txtValue.toUpperCase().indexOf(filter) > -1) {
                         tr[i].style.display = "";
-                    } else if (txtValue2 .toUpperCase().indexOf(filter) > -1) {
+                    } else if (txtValue2.toUpperCase().indexOf(filter) > -1) {
                         tr[i].style.display = "";
-                    }else if (txtValue3 .toUpperCase().indexOf(filter) > -1) {
+                    } else if (txtValue3.toUpperCase().indexOf(filter) > -1) {
                         tr[i].style.display = "";
                     } else {
                         tr[i].style.display = "none";
@@ -248,31 +242,26 @@
             }
 
         }
-  
-        
         const overlay = document.querySelector(".overlay");
-    
+
         function openForm() {
 
-        document.getElementById("myForm").style.display = "block";
-        overlay.classList.add("overlayStyle");
+            document.getElementById("myForm").style.display = "block";
+            overlay.classList.add("overlayStyle");
         }
-    
-        function closeForm() {
-       
-        document.getElementById("myForm").style.display = "none";
-        overlay.classList.remove("overlayStyle");
-        }
-       
-       
 
+        function closeForm() {
+
+            document.getElementById("myForm").style.display = "none";
+            overlay.classList.remove("overlayStyle");
+        }
 
         const allSideMenu = document.querySelectorAll('#sidebar .side-menu.top li a');
 
         allSideMenu.forEach(item => {
             const li = item.parentElement;
 
-            item.addEventListener('click', function () {
+            item.addEventListener('click', function() {
                 allSideMenu.forEach(i => {
                     i.parentElement.classList.remove('active');
                 })
@@ -283,11 +272,11 @@
 
 
 
-// TOGGLE SIDEBAR
+        // TOGGLE SIDEBAR
         const menuBar = document.querySelector('#content nav .bx.bx-menu');
         const sidebar = document.getElementById('sidebar');
 
-        menuBar.addEventListener('click', function () {
+        menuBar.addEventListener('click', function() {
             sidebar.classList.toggle('hide');
         })
 
@@ -301,7 +290,7 @@
         const searchButtonIcon = document.querySelector('#content nav form .form-input button .bx');
         const searchForm = document.querySelector('#content nav form');
 
-        searchButton.addEventListener('click', function (e) {
+        searchButton.addEventListener('click', function(e) {
             if (window.innerWidth < 576) {
                 e.preventDefault();
                 searchForm.classList.toggle('show');
@@ -325,7 +314,7 @@
         }
 
 
-        window.addEventListener('resize', function () {
+        window.addEventListener('resize', function() {
             if (this.innerWidth > 576) {
                 searchButtonIcon.classList.replace('bx-x', 'bx-search');
                 searchForm.classList.remove('show');
@@ -336,7 +325,7 @@
 
         const switchMode = document.getElementById('switch-mode');
 
-        switchMode.addEventListener('change', function () {
+        switchMode.addEventListener('change', function() {
             if (this.checked) {
                 document.body.classList.add('dark');
             } else {

@@ -10,6 +10,7 @@ class Order extends Controller
         $data=[
             'order_id'=>$_SESSION['order_id'],
         ];
+        // order verification
         $result=($this->order->order_validation($data));
         if($result){
             $this->view('Pumper/order',$result);
